@@ -1,0 +1,46 @@
+.banner{
+    position: relative;
+    width: 100%;
+    aspect-ratio: 4.5/2;
+}
+.bannerImg{
+    position: absolute;
+}
+.offer{
+    position: absolute;
+    top: 28%;
+    /* transform: translateY(60%); */
+}
+.offer span{
+    color: var(--lightGreen2);
+    font-size: .9rem;
+    font-weight: 600;
+}
+.offer h1, .offer p{
+    font-size: 3rem;
+    margin: 8px 0;
+}
+.offer p{
+    font-size: .9rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+}
+.readMore{
+    background-color: var(--lightGreen2);
+    color: white;
+}
+.showMore{
+    background-color: transparent;
+    border: solid black 1px;
+}
+.offer div button{
+    font-size: .8rem;
+    padding: .5rem 1.2rem;
+    margin: 0 3px;
+}
+.leftSideOffer{
+    left: 19%;
+}
+.rightSideOffer{
+    right: 19%;
+}
