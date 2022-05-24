@@ -1,0 +1,37 @@
+.categories{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 20px;
+    padding: 20px;
+}
+.Card{
+    cursor: pointer;
+    position: relative;
+    aspect-ratio: 1.85/1;
+    background-color: red;
+    overflow: hidden;
+}
+.CardImg{
+    width: 100%;
+    transition: all ease-in-out 920ms;
+}
+.Card:hover .CardImg{
+    transform: scale(1.05);
+}
+.Cardtext{
+    position: absolute;
+    bottom: 8%;
+    left: 5%;
+}
+.Cardtext h3{
+    font-size: 1.3rem;
+    margin: 0 0 1rem 0;
+    font-weight: 500;
+}
+.Cardtext button{
+    background-color: transparent;
+    font-size: .9rem;
+    font-weight: 500;
+    padding: 0 0 .5rem 0;
+    border-bottom: solid black 1.2px;
+}

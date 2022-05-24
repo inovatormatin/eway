@@ -1,0 +1,31 @@
+.productCard{
+    text-align: center;
+}
+.productImage{
+    position: relative;
+    aspect-ratio: 2/2.2;
+}
+.productImage img{
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+#hideOnHover{
+    z-index: 1;
+    transition: all ease-in-out 400ms;
+}
+#hideOnHover:hover{
+    opacity: 0;
+}
+.productDetail h5, .productDetail p{
+    margin: 8px
+}
+.productDetail h5{
+    font-size: 1.2rem;
+    font-weight: 400;
+}
+.productDetail p{
+    font-size: .9rem;
+    font-weight: 400;
+}
