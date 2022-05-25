@@ -30,7 +30,7 @@ const Ourstore = () => {
     { img1: product8a, img2: product8b, productName: 'Shirt in Camel', productPrice: '$ 30.00' },
   ];
   return (
-    <>
+    <div className='ourStore'>
         <section className='storeHeading'>
             <span>Our Store</span>
             <h3>TOP SELLING PRODUCTS</h3>
@@ -46,7 +46,7 @@ const Ourstore = () => {
                 />
             ))}
         </section>
-    </>
+    </div>
   )
 }
 

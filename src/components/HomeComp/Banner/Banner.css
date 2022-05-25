@@ -1,0 +1,43 @@
+.bannerSection{
+    display: flex;
+    padding: 2rem 1rem;
+}
+.bsc{
+    position: relative;
+    width: 50%;
+    aspect-ratio: 2.1/1;
+    margin: 0 8px;
+    overflow: hidden;
+    cursor: pointer;
+}
+.bscImg{
+    width: 100%;
+    transition: all ease-in-out 800ms;
+}
+.bsc:hover .bscImg{
+    transform: scale(1.05);
+}
+.bannerOptions{
+    position: absolute;
+    z-index: 1;
+    top: 50%;
+    left: 6%;
+}
+.bannerOptions span{
+    font-weight: 500;
+}
+.bannerOptions h4{
+    margin: 12px 0;
+    font-size: 1.5rem;
+    font-weight: 400;
+}
+.bannerOptions button{
+    padding: 1rem 2rem;
+    font-size: 1rem;
+    background-color: white;
+    transition: all ease-in-out 300ms;
+}
+.bannerOptions button:hover{
+    background-color: var(--lightGreen);
+    color: white;
+}

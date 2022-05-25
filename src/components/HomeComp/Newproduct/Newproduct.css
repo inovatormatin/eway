@@ -1,7 +1,7 @@
-.ourStore{
-    margin: 2.5rem 0;
+.newproduct{
+    margin: 2.4rem 0;
 }
-.storegallery{
+.npgallery{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-gap: 20px;
@@ -9,16 +9,16 @@
     max-width: 1080px;
     margin: auto;
 }
-.storeHeading{
+.npHeading{
     text-align: center;
     padding: 2rem 0;
 }
-.storeHeading span{
+.npHeading span{
     color: var(--lightGreen);
 }
-.storeHeading h3, .storeHeading p{
+.npHeading h3, .npHeading p{
     margin: 10px 0 15px 0;
 }
-.storeHeading h3{
+.npHeading h3{
     font-size: 2rem;
 }
