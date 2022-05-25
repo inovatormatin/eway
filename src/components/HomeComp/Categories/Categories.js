@@ -1,8 +1,8 @@
 import React from 'react'
 import './Categories.css'
-import c1 from './category1.jpg'
-import c2 from './category2.jpg'
-import c3 from './category3.jpg'
+import c1 from '../../../img/category/category1.jpg'
+import c2 from '../../../img/category/category2.jpg'
+import c3 from '../../../img/category/category3.jpg'
 
 const Categories = () => {
   const myData = [

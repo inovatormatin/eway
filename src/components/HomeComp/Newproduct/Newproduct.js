@@ -1,14 +1,14 @@
 import React from 'react'
 import './Newproduct.css'
 import Product from '../Product/Product'
-import product1a from '../Ourstore/product1-1.jpg'
-import product1b from '../Ourstore/product1-2.jpg'
-import product2a from '../Ourstore/product3-1.jpg'
-import product2b from '../Ourstore/product3-2.jpg'
-import product3a from '../Ourstore/product9-1.jpg'
-import product3b from '../Ourstore/product9-2.jpg'
-import product4a from '../Ourstore/product10-1.jpg'
-import product4b from '../Ourstore/product10-2.jpg'
+import product1a from '../../../img/product/product1-1.jpg'
+import product1b from '../../../img/product/product1-2.jpg'
+import product2a from '../../../img/product/product3-1.jpg'
+import product2b from '../../../img/product/product3-2.jpg'
+import product3a from '../../../img/product/product9-1.jpg'
+import product3b from '../../../img/product/product9-2.jpg'
+import product4a from '../../../img/product/product10-1.jpg'
+import product4b from '../../../img/product/product10-2.jpg'
 
 const Newproduct = () => {
   const product = [

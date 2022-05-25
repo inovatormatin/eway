@@ -1,22 +1,22 @@
 import React from 'react'
 import './Ourstore.css'
 import Product from '../Product/Product'
-import product1a from './product1-1.jpg'
-import product1b from './product1-2.jpg'
-import product2a from './product2-1.jpg'
-import product2b from './product2-2.jpg'
-import product3a from './product3-1.jpg'
-import product3b from './product3-2.jpg'
-import product4a from './product4-1.jpg'
-import product4b from './product4-2.jpg'
-import product5a from './product5-1.jpg'
-import product5b from './product5-2.jpg'
-import product6a from './product6-1.jpg'
-import product6b from './product6-2.jpg'
-import product7a from './product7-1.jpg'
-import product7b from './product7-2.jpg'
-import product8a from './product8-1.jpg'
-import product8b from './product8-2.jpg'
+import product1a from '../../../img/product/product1-1.jpg'
+import product1b from '../../../img/product/product1-2.jpg'
+import product2a from '../../../img/product/product2-1.jpg'
+import product2b from '../../../img/product/product2-2.jpg'
+import product3a from '../../../img/product/product3-1.jpg'
+import product3b from '../../../img/product/product3-2.jpg'
+import product4a from '../../../img/product/product4-1.jpg'
+import product4b from '../../../img/product/product4-2.jpg'
+import product5a from '../../../img/product/product5-1.jpg'
+import product5b from '../../../img/product/product5-2.jpg'
+import product6a from '../../../img/product/product6-1.jpg'
+import product6b from '../../../img/product/product6-2.jpg'
+import product7a from '../../../img/product/product7-1.jpg'
+import product7b from '../../../img/product/product7-2.jpg'
+import product8a from '../../../img/product/product8-1.jpg'
+import product8b from '../../../img/product/product8-2.jpg'
 
 const Ourstore = () => {
   const product = [
@@ -27,7 +27,7 @@ const Ourstore = () => {
     { img1: product5a, img2: product5b, productName: 'Black Skinny Jeans', productPrice: '$ 30.00' },
     { img1: product6a, img2: product6b, productName: 'Tighten Bag', productPrice: '$ 371.00' },
     { img1: product7a, img2: product7b, productName: 'Knot It Tee', productPrice: '$ 33.00' },
-    { img1: product8a, img2: product8b, productName: 'Shirt in Camel', productPrice: '$ 30.00' },
+    { img1: product8a, img2: product8b, productName: 'Shirt in Camel', productPrice: '$ 30.00' }
   ];
   return (
     <div className='ourStore'>

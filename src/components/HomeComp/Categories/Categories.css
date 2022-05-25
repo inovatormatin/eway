@@ -8,7 +8,6 @@
     cursor: pointer;
     position: relative;
     aspect-ratio: 1.85/1;
-    background-color: red;
     overflow: hidden;
 }
 .CardImg{

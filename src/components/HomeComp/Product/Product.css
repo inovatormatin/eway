@@ -4,6 +4,7 @@
 .productImage{
     position: relative;
     aspect-ratio: 2/2.2;
+    cursor: pointer;
 }
 .productImage img{
     position: absolute;

@@ -1,0 +1,16 @@
+.blogTitle{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;    
+    background-image: url('../../img/banner/blog-title.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 300px;
+}
+.blogTitle h2{
+    font-size: 3rem;
+    margin: .8rem;
+    font-weight: 500;
+}
