@@ -1,5 +1,7 @@
 import React from 'react'
 import './ShopItems.css'
+import { BsFillGrid3X3GapFill } from "react-icons/bs";
+// BsList
 import Product from '../../HomeComp/Product/Product'
 import product1a from '../../../img/product/product1-1.jpg'
 import product1b from '../../../img/product/product1-2.jpg'
@@ -115,14 +117,29 @@ const ShopItems = () => {
         { img1: product20a, img2: product20b, itemsName: 'Crossover Ribbed Top', itemsPrice: '$ 30.00' },
         { img1: product32a, img2: product32b, itemsName: 'Recruit Small Saddle', itemsPrice: '$ 65.00' },
         { img1: product33a, img2: product33b, itemsName: 'Printed Bag', itemsPrice: '$ 72.00' },
-        { img1: product34a, img2: product34b, itemsName: 'Pointy Stileto Boot', itemsPrice: '$ 203.00' },
+        { img1: product34a, img2: product34b, itemsName: 'Pointy Stileto Boot', itemsPrice: '$ 203.00' }
     ];
     return(
         <>
-        <span></span>
+        <nav className='shopItemNav'>
+            <div className='rightNav'>
+                <span>All Products</span>
+                <span>Hot Products</span>
+                <span>Sales Products</span>
+            </div>
+            <div className='leftNav'>
+                <span>Showing 1-18 0f 28 results</span>
+                <span>Filter +</span>
+                <span>
+                    <BsFillGrid3X3GapFill />
+                    {/* <BsList /> */}
+                </span>
+            </div>
+        </nav>
         <section className='itemgallery'>
-            {items.map((items => 
+            {items.map(((items, index) => 
                 <Product 
+                key={index}
                 img1={items.img1} 
                 img2={items.img2} 
                 name={items.itemsName} 

@@ -30,6 +30,7 @@ button{
   cursor: pointer;
   border: none;
   outline: none;
+  font-family: 'Work Sans', sans-serif;
 }
 
 .swiper-slide {
