@@ -14,3 +14,50 @@
     margin: .8rem;
     font-weight: 500;
 }
+.contactContain{
+    width: 1200px;
+    margin: 3rem auto 5rem auto;
+    display: flex;
+    justify-content: space-between;
+}
+.contactContain form input{
+    border: none;
+    outline: none;
+    font-size: 1.3rem;
+    padding: 1rem .5rem;
+    border-bottom: solid 1px rgb(204, 204, 204);
+    margin-bottom: 1.5rem;
+}
+.contactContain form textarea{
+    font-size: 1.3rem;
+    padding: 1rem .5rem;
+    border: none;
+    outline: none;
+    border-bottom: solid 1px rgb(204, 204, 204);
+    margin-bottom: 1.5rem;
+}
+.contactContain form input:focus,
+.contactContain form textarea:focus{
+    border-bottom: solid 1px black;
+}
+.contactContain form{
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+}
+.contactContain form button{
+    background-color: black;
+    color: white;
+    width: max-content;
+    padding: 1rem 1.5rem;
+    font-size: 1.1rem;
+    transition: all ease-in-out 400ms;
+}
+.contactContain form button:hover{
+    background-color: var(--lightGreen);
+}
+.map{
+    width: 38%;
+    aspect-ratio: 1/1;
+    border: none !important;
+}

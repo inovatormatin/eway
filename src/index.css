@@ -32,6 +32,9 @@ button{
   outline: none;
   font-family: 'Work Sans', sans-serif;
 }
+input, textarea{
+  font-family: 'Work Sans', sans-serif;
+}
 
 .swiper-slide {
   text-align: center;
