@@ -7,10 +7,11 @@ import Shop from './pages/Shop/Shop'
 import Blog from './pages/Blog/Blog'
 import About from './pages/About/About'
 import Contact from './pages/Contact/Contact'
+import UserState from './context/user/UserState'
 
 const App = () => {
   return (
-    <>
+    <UserState>
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
@@ -20,7 +21,7 @@ const App = () => {
         <Route path="/contact" element={<Contact />} />
       </Routes>
       <Footer />
-    </>
+    </UserState>
   )
 }
 
