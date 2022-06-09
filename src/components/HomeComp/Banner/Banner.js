@@ -1,13 +1,11 @@
 import React from 'react';
 import './Banner.css';
-import banner1 from '../../../img/banner/banner1.jpg'
-import banner2 from '../../../img/banner/banner2.jpg'
 
 const Banner = () => {
     return(
         <div className='bannerSection'>
             <div className='bsc'>
-                <img className='bscImg' src={banner1} alt="banner1" />
+                <img className='bscImg' src="https://res.cloudinary.com/inovatormatin/image/upload/v1653646907/eway/banner/banner1_sh77zm.jpg" alt="banner1" />
                 <div className='bannerOptions'>
                     <span>Sunglass</span>
                     <h4>Our Brand new Collection</h4>
@@ -15,7 +13,7 @@ const Banner = () => {
                 </div>
             </div>
             <div className='bsc'>
-                <img className='bscImg' src={banner2} alt="banner2" />
+                <img className='bscImg' src="https://res.cloudinary.com/inovatormatin/image/upload/v1653646908/eway/banner/banner2_tev0t8.jpg" alt="banner2" />
                 <div className='bannerOptions'>
                     <span>Jewellry</span>
                     <h4>Women top Collection</h4>

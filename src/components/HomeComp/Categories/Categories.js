@@ -1,28 +1,40 @@
-import React from 'react'
-import './Categories.css'
-import c1 from '../../../img/category/category1.jpg'
-import c2 from '../../../img/category/category2.jpg'
-import c3 from '../../../img/category/category3.jpg'
+import React from "react";
+import "./Categories.css";
 
 const Categories = () => {
   const myData = [
-      { image: c1, title: 'Women Collection', alt: 'category1' },
-      { image: c2, title: 'Mens Collection', alt: 'category2' },
-      { image: c3, title: 'Accessories', alt: 'category3' }
-    ];  
+    {
+      image:
+        "https://res.cloudinary.com/inovatormatin/image/upload/v1653646901/eway/category/category1_cyau86.jpg",
+      title: "Women Collection",
+      alt: "category1",
+    },
+    {
+      image:
+        "https://res.cloudinary.com/inovatormatin/image/upload/v1653646901/eway/category/category2_u3iqzo.jpg",
+      title: "Mens Collection",
+      alt: "category2",
+    },
+    {
+      image:
+        "https://res.cloudinary.com/inovatormatin/image/upload/v1653646901/eway/category/category3_mu1u1m.jpg",
+      title: "Accessories",
+      alt: "category3",
+    },
+  ];
   return (
-    <section className='categories'>
-        {myData.map((card , index) => 
-            <div className='Card' key={index}>
-                <img className='CardImg' src={card.image} alt={card.alt} />
-                <div className='Cardtext'>
-                    <h3>{card.title}</h3>
-                    <button>Shop Now</button>
-                </div>
-            </div>
-        )}
+    <section className="categories">
+      {myData.map((card, index) => (
+        <div className="Card" key={index}>
+          <img className="CardImg" src={card.image} alt={card.alt} />
+          <div className="Cardtext">
+            <h3>{card.title}</h3>
+            <button>Shop Now</button>
+          </div>
+        </div>
+      ))}
     </section>
-  )
-}
+  );
+};
 
 export default Categories;

@@ -9,7 +9,6 @@
 .offer{
     position: absolute;
     top: 28%;
-    /* transform: translateY(60%); */
 }
 .offer span{
     color: var(--lightGreen2);

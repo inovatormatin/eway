@@ -1,7 +1,5 @@
 import React from 'react'
 import './About.css'
-import a1 from '../../img/other/about1.jpg'
-import a2 from '../../img/other/about2.jpg'
 
 const About = () => {
   return (
@@ -43,10 +41,10 @@ const About = () => {
             service, and a fine selection of affordable, high-quality fashion, 
             beauty, and lifestyle products.
           </p>
-          <img src={a2} alt="about2img" />
+          <img src="https://res.cloudinary.com/inovatormatin/image/upload/v1653646910/eway/other/about2_nsnt01.jpg" alt="about2img" />
         </section>
         <section className='acls'>
-          <img src={a1} alt="about1img" />
+          <img src="https://res.cloudinary.com/inovatormatin/image/upload/v1653646901/eway/other/about1_om5e4d.jpg" alt="about1img" />
           <h3>Company Profile</h3>
           <p>
             The Company first online retailer to globally distribute a wide 

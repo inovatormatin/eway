@@ -1,6 +1,4 @@
 import React from 'react';
-import banner1 from '../../../img/homeSlide/slider3.jpg';
-import banner2 from '../../../img/homeSlide/slider4.jpg';
 import './HomeSlider.css'
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
@@ -20,7 +18,7 @@ const HomeSlider = () => {
       className="mySwiper">
         <SwiperSlide>
             <div className='banner'>
-                <img className='bannerImg' src={banner1} alt="banner1" />
+                <img className='bannerImg' src="https://res.cloudinary.com/inovatormatin/image/upload/v1653646901/eway/homeSlide/slider3_adqbhb.jpg" alt="banner1" />
                 <section className='offer rightSideOffer'>
                     <span>SUMMER 30</span>
                     <h1>NEW HOT <br />EVERYTHING</h1>
@@ -34,7 +32,7 @@ const HomeSlider = () => {
         </SwiperSlide>
         <SwiperSlide>
             <div className='banner'>
-                <img className='bannerImg' src={banner2} alt="banner2" />
+                <img className='bannerImg' src="https://res.cloudinary.com/inovatormatin/image/upload/v1653646901/eway/homeSlide/slider4_gqz07j.jpg" alt="banner2" />
                 <section className='offer leftSideOffer'>
                     <span>SUMMER 30</span>
                     <h1>NEW HOT <br />EVERYTHING</h1>
