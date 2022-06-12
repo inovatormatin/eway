@@ -1,6 +1,8 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import Login from '../Login/Login'
+import Userdropdown from "../Userdropdown/Userdropdown";
 import { NavLink } from "react-router-dom";
+import userContext from "../../context/user/userContext";
 import {
   AiFillHome,
   AiOutlineShoppingCart,
@@ -11,7 +13,9 @@ import logo from '../../SVG/whiteEway.svg'
 import './Navbar.css'
 
 const Navbar = () => {
+  const userInfo = useContext(userContext);
   const [userform, setUserform] = useState(false);
+  const [userdropdown, setUserdropdown] = useState(false);
   const menu = [
     { url: '/', lName: `Home` },
     { url: '/shop', lName: 'Shop' },
@@ -42,12 +46,27 @@ const Navbar = () => {
           <ul className="extraOption">
             <li><AiOutlineSearch /></li>
             <li><AiOutlineShoppingCart /></li>
-            <li onClick={() => setUserform(true)}><AiOutlineUser /></li>
+            <li onClick={() => {
+              if(!userInfo.isUserLoggedIn){
+                setUserform(true)
+              } else {
+                userdropdown ?
+                setUserdropdown(false) :
+                setUserdropdown(true)
+              }
+            }}>
+              <AiOutlineUser />
+            </li>
           </ul>
         </div>
       </nav>
       {userform ?
         <Login update={setUserform} />
+        :
+        null
+      }
+      {userdropdown ?
+        <Userdropdown update={setUserdropdown}/>
         :
         null
       }

@@ -1,10 +1,11 @@
-import React, { useState } from 'react'
+import React, { useState, useContext } from 'react'
 import { useNavigate } from "react-router-dom"
 import './login.css'
 import axios from 'axios'
 import { GrClose } from "react-icons/gr"
 import { login, signup } from '../../constant/routes'
 import { toast } from 'react-toastify'
+import userContext from '../../context/user/userContext'
 
 const Login = ({ update }) => {
     const navigate = useNavigate();
@@ -19,6 +20,7 @@ const Login = ({ update }) => {
         password: "",
         checkpassword: ""
     });
+    const userInfo = useContext(userContext);
 
     // login user
     const loginuser = async (e) => {
@@ -28,8 +30,11 @@ const Login = ({ update }) => {
         if (response) {
             update(false)
             navigate('/')
-            toast.success('Welcome');
-        } else{
+            localStorage.setItem('authtoken', response.data.authtokken)
+            userInfo.setIsUserLoggedIn(true)
+            userInfo.getuserbyauth()
+            toast.success('Welcome')
+        } else {
             toast.error('Wrong credentials ! Try again');
         }
     };
@@ -37,14 +42,14 @@ const Login = ({ update }) => {
     // register user
     const registeruser = async (e) => {
         e.preventDefault();
-        if(signupData.password === signupData.checkpassword){
+        if (signupData.password === signupData.checkpassword) {
             const response = await axios.post(signup, signupData)
-            .then((res) => { return res }).catch((err) => console.error(err.response.data.error));
+                .then((res) => { return res }).catch((err) => console.error(err.response.data.error));
             if (response) {
-                update(false)
                 navigate('/')
-                toast.success('Welcome');
-            } else{
+                setForm(true)
+                toast.success('Account Created ! Please login')
+            } else {
                 toast.error('Wrong credentials ! Try again');
             }
         } else {
