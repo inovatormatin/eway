@@ -3,6 +3,7 @@
     height: max-content;
     display: flex;
     padding: 1rem 3rem;
+    position: relative;
 }
 .navbarOptions{
     display: flex;

@@ -47,26 +47,26 @@ const Navbar = () => {
             <li><AiOutlineSearch /></li>
             <li><AiOutlineShoppingCart /></li>
             <li onClick={() => {
-              if(!userInfo.isUserLoggedIn){
+              if (!userInfo.isUserLoggedIn) {
                 setUserform(true)
               } else {
                 userdropdown ?
-                setUserdropdown(false) :
-                setUserdropdown(true)
+                  setUserdropdown(false) :
+                  setUserdropdown(true)
               }
             }}>
               <AiOutlineUser />
             </li>
           </ul>
         </div>
+        {userdropdown ?
+          <Userdropdown update={setUserdropdown} />
+          :
+          null
+        }
       </nav>
       {userform ?
         <Login update={setUserform} />
-        :
-        null
-      }
-      {userdropdown ?
-        <Userdropdown update={setUserdropdown}/>
         :
         null
       }
