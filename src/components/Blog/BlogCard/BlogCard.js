@@ -6,7 +6,7 @@ const BlogCard = ({img, title, disc}) => {
         <div className='blogCard'>
             <img className='thumbnail' src={img} alt={title} />
             <h4>{title}</h4>
-            <p>{disc}</p>
+            <p>{disc.slice(0,148) + "..."}</p>
             <button>Read More</button>
         </div>
     );

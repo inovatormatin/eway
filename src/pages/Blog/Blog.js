@@ -1,45 +1,22 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import './Blog.css'
 import BlogCard from '../../components/Blog/BlogCard/BlogCard'
 import MiniCard from '../../components/Blog/MiniCard/MiniCard'
-import b1 from '../../img/blog/b1.jpg'
-import b2 from '../../img/blog/b2.jpg'
-import b3 from '../../img/blog/b3.jpg'
-import b4 from '../../img/blog/b4.jpg'
-import b5 from '../../img/blog/b5.jpg'
+import axios from 'axios'
+import { getallblogs } from '../../constant/routes'
 import { VscSearch } from "react-icons/vsc";
 
 const Blog = () => {
-  const allBlogs = [
-    {
-      img: b1, 
-      title: 'Why we love Fashion', 
-      date: 'January 22, 2022',
-      disc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec lobortis nisl eget sapien accumsan viverra. Aenean fringilla felis vel urna…'
-    },
-    {
-      img: b2, 
-      title: 'Our Fashion Designer Team',
-      date: 'January 10, 2022', 
-      disc: '"Designers conduct research on fashion trends and interpret them for their audience".[1] They attempt to design clothes which are functional…'
-    },
-    {
-      img: b3, 
-      title: 'Standard Post Example',
-      date: 'January 02, 2022', 
-      disc: 'Aenean commodo ligula eget dolor aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec…'
-    },
-    {
-      img: b4, 
-      title: 'Image Gallery Post Example', 
-      disc: 'Proin nulla nibh, auctor in facilisis sed, ultrices at libero. Donec quis auctor velit. Cras dapibus ipsum sit amet turpis…'
-    },
-    {
-      img: b5, 
-      title: 'Awesome Youtube video embaded', 
-      disc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla ornare, nisi eget pellentesque ornare, est lorem hendrerit nunc, nec egestas…'
+  const [allBlogs, setAllBlogs] = useState([]);
+  useEffect(() => {
+    async function response () {
+      const result = await axios.get(getallblogs)
+        .then((res) => { return res })
+        .catch((err) => console.error(err));
+      setAllBlogs(result.data);
     }
-  ];
+    response();
+  });
   return (
     <div className='blog'>
       <div className='blogTitle'>
@@ -48,8 +25,8 @@ const Blog = () => {
       </div>
       <div className='blogArea'>
         <section className='allBlogs'>
-          {allBlogs.map((blog, index) => 
-            <BlogCard key={index} img={blog.img} title={blog.title} disc={blog.disc} />
+          {allBlogs.map((blog, index) =>
+            <BlogCard key={index} img={blog.img} title={blog.title} disc={blog.description} />
           )}
         </section>
         <section className='latestBlogs'>
@@ -58,8 +35,8 @@ const Blog = () => {
             <button><VscSearch /></button>
           </span>
           <h4>Latest Posts</h4>
-          {allBlogs.slice(0, 3).map((blog, index) => 
-            <MiniCard key={index} img={blog.img} title={blog.title} date={blog.date}/>
+          {allBlogs.slice(0, 3).map((blog, index) =>
+            <MiniCard key={index} img={blog.img} title={blog.title} date={blog.date.slice(0,10)} />
           )}
         </section>
       </div>
