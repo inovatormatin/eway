@@ -16,7 +16,7 @@ const Blog = () => {
       setAllBlogs(result.data);
     }
     response();
-  });
+  },[]);
   return (
     <div className='blog'>
       <div className='blogTitle'>
@@ -25,9 +25,13 @@ const Blog = () => {
       </div>
       <div className='blogArea'>
         <section className='allBlogs'>
-          {allBlogs.map((blog, index) =>
-            <BlogCard key={index} img={blog.img} title={blog.title} disc={blog.description} />
-          )}
+          {allBlogs? 
+          allBlogs.map((blog, index) =>
+          <BlogCard key={index} img={blog.img} title={blog.title} disc={blog.description} author={blog.author} id={blog._id}/>
+          )
+          :
+          <h3>Loading</h3>
+          }
         </section>
         <section className='latestBlogs'>
           <span className='searchBar'>
