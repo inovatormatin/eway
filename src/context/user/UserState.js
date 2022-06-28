@@ -6,8 +6,6 @@ const UserState = (props) => {
     // to chech wether user logged in or not
     const [isUserLoggedIn, setIsUserLoggedIn] = useState(false);
 
-    // const isUserLogin = () => {}
-
     // logged in user info
     const [user, setUser] = useState({
         userid: "",
@@ -15,7 +13,7 @@ const UserState = (props) => {
         email: ""
     });
 
-    // update user info
+    // store user info
     const userInfo = (data) => {
         const { _id, name, email } = data;
         setUser(prevState => ({ ...prevState, userid: _id }));

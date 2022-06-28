@@ -29,6 +29,10 @@
     grid-gap: 20px;
     padding: 0 1rem;
 }
+.allBlogs .loader{
+    grid-column-start: 1;
+    grid-column-end: 3;
+}
 .searchBar{
     display: flex;
     padding: 5px;

@@ -8,19 +8,21 @@ import { toast } from 'react-toastify'
 import userContext from '../../context/user/userContext'
 
 const Login = ({ update }) => {
-    const navigate = useNavigate();
-    const [form, setForm] = useState(true);
+    const userInfo = useContext(userContext);
+    const navigate = useNavigate(); // navigation
+    const [form, setForm] = useState(true); // conditionaly render login logout form
+    // login form initialstate
     const [loginData, setLoginData] = useState({
         email: "",
         password: ""
     });
+    // signup form initialstate
     const [signupData, setSignupData] = useState({
         name: "",
         email: "",
         password: "",
         checkpassword: ""
     });
-    const userInfo = useContext(userContext);
 
     // login user
     const loginuser = async (e) => {

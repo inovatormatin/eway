@@ -1,13 +1,12 @@
 import React, { useEffect, useState } from 'react'
 import './Blog.css'
-import BlogCard from '../../components/Blog/BlogCard/BlogCard'
-import MiniCard from '../../components/Blog/MiniCard/MiniCard'
+import {Loader, BlogCard, MiniCard} from '../../components'
 import axios from 'axios'
 import { getallblogs } from '../../constant/routes'
 import { VscSearch } from "react-icons/vsc";
 
 const Blog = () => {
-  const [allBlogs, setAllBlogs] = useState([]);
+  const [allBlogs, setAllBlogs] = useState(null);
   useEffect(() => {
     async function response () {
       const result = await axios.get(getallblogs)
@@ -25,12 +24,14 @@ const Blog = () => {
       </div>
       <div className='blogArea'>
         <section className='allBlogs'>
-          {allBlogs? 
+          {allBlogs !== null ? 
           allBlogs.map((blog, index) =>
-          <BlogCard key={index} img={blog.img} title={blog.title} disc={blog.description} author={blog.author} id={blog._id}/>
+          <BlogCard key={index} img={blog.img} title={blog.title} disc={blog.description} author={blog.author} id={blog._id} date={blog.date.slice(0,10)}/>
           )
           :
-          <h3>Loading</h3>
+          <div className='loader'>
+            <Loader />
+          </div>
           }
         </section>
         <section className='latestBlogs'>
@@ -39,9 +40,12 @@ const Blog = () => {
             <button><VscSearch /></button>
           </span>
           <h4>Latest Posts</h4>
-          {allBlogs.slice(0, 3).map((blog, index) =>
+          {allBlogs !== null ? 
+          allBlogs.slice(0, 3).map((blog, index) =>
             <MiniCard key={index} img={blog.img} title={blog.title} date={blog.date.slice(0,10)} />
-          )}
+          ):
+          <Loader />
+        }
         </section>
       </div>
     </div>
