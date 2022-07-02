@@ -1,8 +1,6 @@
-import React, { useState, useContext } from "react";
-import Login from '../Login/Login'
-import Userdropdown from "../Userdropdown/Userdropdown";
+import React, { useState, useEffect } from "react";
+import { Login, Userdropdown } from '../../components'
 import { NavLink } from "react-router-dom";
-import userContext from "../../context/user/userContext";
 import {
   AiFillHome,
   AiOutlineShoppingCart,
@@ -11,9 +9,10 @@ import {
 } from "react-icons/ai";
 import logo from '../../SVG/whiteEway.svg'
 import './Navbar.css'
+import { useSelector } from "react-redux";
 
 const Navbar = () => {
-  const userInfo = useContext(userContext);
+  const userState = useSelector(state => state.userLogin);
   const [userform, setUserform] = useState(false);
   const [userdropdown, setUserdropdown] = useState(false);
   const menu = [
@@ -26,6 +25,13 @@ const Navbar = () => {
   const activeLi = {
     color: "#61ce70",
   };
+
+  useEffect(() => {
+    if(userState.authtokken !== null){
+      setUserform(false)
+    }
+  }, [userState]);
+
   return (
     <>
       <nav className='navbar'>
@@ -47,12 +53,10 @@ const Navbar = () => {
             <li><AiOutlineSearch /></li>
             <li><AiOutlineShoppingCart /></li>
             <li onClick={() => {
-              if (!userInfo.isUserLoggedIn) {
-                setUserform(true)
+              if(userState.authtokken !== null){
+                userdropdown ? setUserdropdown(false) : setUserdropdown(true);
               } else {
-                userdropdown ?
-                  setUserdropdown(false) :
-                  setUserdropdown(true)
+                userform ? setUserform(false) : setUserform(true);
               }
             }}>
               <AiOutlineUser />

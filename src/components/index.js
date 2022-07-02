@@ -27,4 +27,4 @@ export { default as Footer } from "./Footer/Footer";
 
 // myUtils exports ...
 export { default as Toast } from "./MyUtils/Toast"
-export { default as Loader } from "./MyUtils/Loader"
+export { RingLoader, SpinLoader } from "./MyUtils/Loaders"

@@ -1,18 +1,19 @@
-import React,{useContext} from 'react'
+import React from 'react'
 import './userdropdown.css'
-import userContext from '../../context/user/userContext'
 import { toast } from 'react-toastify';
 import { FiLogOut } from "react-icons/fi";
+import { useDispatch, useSelector } from 'react-redux';
+import { userLogout } from '../../actions/userActions';
 
 const Userdropdown = ({update}) => {
-    const userInfo = useContext(userContext);
-    const {name, email} = userInfo.user;
-    const logout = () => {
-        userInfo.setIsUserLoggedIn(false);
-        localStorage.removeItem('authtoken');
-        update(false);
-        toast.success('Logged out !')
-    }
+  const dispatch = useDispatch();
+  const userState = useSelector(state => state.userLogin);
+  const { name, email } = userState.userInfo;
+  const logout = () => {
+    dispatch(userLogout());
+    update(false);
+    toast.success('Logged out !')
+  }
   return (
     <div className='userDropdown'>
         <div className='upperTriangle'></div>

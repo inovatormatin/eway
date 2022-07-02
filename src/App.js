@@ -2,12 +2,11 @@ import React from 'react'
 import { Routes, Route, } from "react-router-dom"
 import { Home, Shop, Blog, Blogpage, About, Contact } from "./pages"
 import { Navbar, Footer, Toast } from "./components"
-import UserState from './context/user/UserState'
 
 
 const App = () => {
   return (
-    <UserState>
+    <>
       <Navbar />
       <Toast />
       <Routes>
@@ -23,7 +22,7 @@ const App = () => {
         <Route path="/contact" element={<Contact />} />
       </Routes>
       <Footer />
-    </UserState>
+    </>
   )
 }
 

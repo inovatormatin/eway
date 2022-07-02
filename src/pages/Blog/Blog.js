@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import './Blog.css'
-import {Loader, BlogCard, MiniCard} from '../../components'
+import {RingLoader, BlogCard, MiniCard} from '../../components'
 import axios from 'axios'
 import { getallblogs } from '../../constant/routes'
 import { VscSearch } from "react-icons/vsc";
@@ -30,7 +30,7 @@ const Blog = () => {
           )
           :
           <div className='loader'>
-            <Loader />
+            <RingLoader />
           </div>
           }
         </section>
@@ -44,7 +44,7 @@ const Blog = () => {
           allBlogs.slice(0, 3).map((blog, index) =>
             <MiniCard key={index} img={blog.img} title={blog.title} date={blog.date.slice(0,10)} />
           ):
-          <Loader />
+          <RingLoader />
         }
         </section>
       </div>
