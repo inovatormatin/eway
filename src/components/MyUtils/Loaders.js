@@ -6,18 +6,21 @@ export const RingLoader = () => {
     const myStyles = {
         display: "flex",
         justifyContent: "center",
+        alignItems: "center",
+        flexDirection: "column",
         margin: "5rem auto",
+        color: "#45bd52",
         width: "100%"
     }
     return (
         <div style={myStyles}>
             <Rings
                 ariaLabel="loading-indicator"
-                height={80}
-                width={80}
+                height={60}
+                width={60}
                 color="#45bd52"
             />
-            {/* <h1>loading</h1> */}
+            <h5 style={{margin: '8px auto auto auto'}}>loading...</h5>
         </div>
     )
 }

@@ -1,21 +1,17 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect } from 'react'
 import './Blog.css'
 import {RingLoader, BlogCard, MiniCard} from '../../components'
-import axios from 'axios'
-import { getallblogs } from '../../constant/routes'
 import { VscSearch } from "react-icons/vsc";
+import { useDispatch, useSelector } from 'react-redux'
+import { getallBlogs } from '../../actions/blogActtions'
 
 const Blog = () => {
-  const [allBlogs, setAllBlogs] = useState(null);
+  const dispatch = useDispatch();
+  const blogState = useSelector(state => state.getallBlogs);
+  const { blogs } = blogState;
   useEffect(() => {
-    async function response () {
-      const result = await axios.get(getallblogs)
-        .then((res) => { return res })
-        .catch((err) => console.error(err));
-      setAllBlogs(result.data);
-    }
-    response();
-  },[]);
+    dispatch(getallBlogs());
+  }, []);
   return (
     <div className='blog'>
       <div className='blogTitle'>
@@ -24,8 +20,8 @@ const Blog = () => {
       </div>
       <div className='blogArea'>
         <section className='allBlogs'>
-          {allBlogs !== null ? 
-          allBlogs.map((blog, index) =>
+          {blogs !== null ? 
+          blogs.map((blog, index) =>
           <BlogCard key={index} img={blog.img} title={blog.title} disc={blog.description} author={blog.author} id={blog._id} date={blog.date.slice(0,10)}/>
           )
           :
@@ -40,8 +36,8 @@ const Blog = () => {
             <button><VscSearch /></button>
           </span>
           <h4>Latest Posts</h4>
-          {allBlogs !== null ? 
-          allBlogs.slice(0, 3).map((blog, index) =>
+          {blogs !== null ? 
+          blogs.slice(0, 3).map((blog, index) =>
             <MiniCard key={index} img={blog.img} title={blog.title} date={blog.date.slice(0,10)} />
           ):
           <RingLoader />

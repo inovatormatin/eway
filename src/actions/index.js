@@ -14,3 +14,13 @@ export const USER_SIGNUP_FAIL = 'USER_SIGNUP_FAIL';
 
 // user Logout
 export const USER_LOGOUT = 'USER_LOGOUT';
+
+// get all blogs
+export const BLOGS_REQUEST = 'BLOGS_REQUEST';
+export const BLOGS_REQUEST_SUCCESS = 'BLOGS_REQUEST_SUCCESS';
+export const BLOGS_REQUEST_FAIL = 'BLOGS_REQUEST_FAIL';
+
+// get all products
+export const PRODUCTS_REQUEST = 'PRODUCTS_REQUEST';
+export const PRODUCTS_REQUEST_SUCCESS = 'PRODUCTS_REQUEST_SUCCESS';
+export const PRODUCTS_REQUEST_FAIL = 'PRODUCTS_REQUEST_FAIL';
