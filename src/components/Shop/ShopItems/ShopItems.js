@@ -28,13 +28,7 @@ const ShopItems = () => {
             <section className='itemgallery'>
                 {products !== null ?
                     products.map(((product, index) =>
-                        <Product
-                            key={index}
-                            img1={product.img1}
-                            img2={product.img2}
-                            name={product.name}
-                            price={`$ ${product.price}`}
-                        />
+                    <Product key={index} product={product}/>
                     ))
                     : ''
                 }

@@ -16,13 +16,7 @@ const Ourstore = () => {
         <section className='storegallery'>
         {products !== null ?
           products.slice(0, 8).map(((product, index) => 
-          <Product 
-          key={index}
-          img1={product.img1} 
-          img2={product.img2} 
-          name={product.name} 
-          price={`$ ${product.price}`}
-          />
+          <Product key={index} product={product}/>
           )) 
           : '' }
         </section>

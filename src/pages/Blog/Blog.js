@@ -11,7 +11,7 @@ const Blog = () => {
   const { blogs } = blogState;
   useEffect(() => {
     dispatch(getallBlogs());
-  }, []);
+  }, [dispatch]);
   return (
     <div className='blog'>
       <div className='blogTitle'>
