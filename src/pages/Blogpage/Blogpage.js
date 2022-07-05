@@ -13,7 +13,13 @@ const Blogpage = () => {
             </div>
             <div className="blog-content">
                 <img className='blogImage' src={img} alt={title} />
-                <p>{disc.replace("<br />", `\n`)}</p>
+                {disc.split('\n').map((par, index) => {
+                    return (
+                        <p key={index}>
+                            {par}
+                        </p>
+                    )
+                })}
                 <span>Posted at {date}, </span>
                 <span>{author}</span>
             </div>

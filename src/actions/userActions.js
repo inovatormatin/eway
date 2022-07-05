@@ -92,10 +92,10 @@ export const userSignup = (userInfo) => async (dispatch) => {
     }
     // sending request
     const response = await axios.post(signup, userInfo, config)
-    .then(res => res.data)
-    .catch(error => error.response.data.error);
+    .then(res => res)
+    .catch(error => error.response);
 
-    if(response.success === true){
+    if(response.status === 200){
         // store user info
         dispatch({
             type: USER_SIGNUP_SUCCESS,
@@ -104,7 +104,7 @@ export const userSignup = (userInfo) => async (dispatch) => {
     } else {
         dispatch({
             type : USER_SIGNUP_FAIL,
-            payload : response,
+            payload : response.data.error,
         });
         toast.error(response);
     }

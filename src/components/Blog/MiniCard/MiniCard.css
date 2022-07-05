@@ -3,6 +3,7 @@
     margin-bottom: 2rem;
     display: flex;
     cursor: pointer;
+    color: black;
 }
 .miniCard img{
     width: 89px;

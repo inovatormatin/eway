@@ -17,3 +17,18 @@
 }
 .rightNav span{ padding-left: 10px; cursor: pointer; }
 .leftNav span{ padding-right: 10px; }
+.loadmore{
+    width: max-content;
+    margin: 1rem auto;
+}
+.loadmore button{
+    background-color: var(--lightGreen2);
+    color: white;
+    font-size: 1.3rem;
+    padding: .5rem 2rem;
+    border-radius: 5px;
+    transition: 200ms ease-in-out;
+}
+.loadmore button:hover{
+    background-color: var(--lightGreen);
+}

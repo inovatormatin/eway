@@ -38,7 +38,7 @@ const Blog = () => {
           <h4>Latest Posts</h4>
           {blogs !== null ? 
           blogs.slice(0, 3).map((blog, index) =>
-            <MiniCard key={index} img={blog.img} title={blog.title} date={blog.date.slice(0,10)} />
+            <MiniCard key={index} img={blog.img} title={blog.title} disc={blog.description} author={blog.author} id={blog._id} date={blog.date.slice(0,10)}/>
           ):
           <RingLoader />
         }

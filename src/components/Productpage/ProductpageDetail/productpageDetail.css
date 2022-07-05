@@ -1,5 +1,6 @@
 .productPageDetail{
     padding: 5px 30px;
+    width: 100%;
 }
 .productPageDetail h1{
     font-size: 2rem;
@@ -15,7 +16,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin: 1.5rem auto;
+    margin: 5rem auto 2rem auto;
 }
 .setQuantity .cartButton{
     background-color: black;

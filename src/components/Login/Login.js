@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import './login.css'
 import { GrClose } from "react-icons/gr"
 import { toast } from 'react-toastify'
@@ -44,6 +44,10 @@ const Login = ({ update }) => {
         dispatch(userSignup(signupData)) :
         toast.error("Password not matched !");
     }
+    
+    useEffect(() => {
+        signupState.user ? setForm(true) : setForm(false);
+    }, [signupState]);
 
     return (
         <div className='loginBox'>

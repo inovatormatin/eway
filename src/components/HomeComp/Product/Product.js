@@ -13,7 +13,7 @@ const Product = ({ product }) => {
         </div>
         <div className='productDetail'>
           <h5>{name}</h5>
-          <p>{price}</p>
+          <p>{`$ ${price}`}</p>
         </div>
       </Link>
     </div>
