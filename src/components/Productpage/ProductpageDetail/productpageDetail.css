@@ -1,0 +1,59 @@
+.productPageDetail{
+    padding: 5px 30px;
+}
+.productPageDetail h1{
+    font-size: 2rem;
+    margin: 1rem auto;
+    font-weight: 400;
+}
+.productPageDetail p{
+    font-size: 1.1rem;
+    margin: 0;
+    font-weight: 300;
+}
+.setQuantityAndPrice{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 1.5rem auto;
+}
+.setQuantity .cartButton{
+    background-color: black;
+    color: white;
+    font-size: 1rem;
+    font-weight: 400;
+    padding: .8rem 2rem;
+    margin-left: 10px;
+    cursor: pointer;
+    transition: 200ms ease-in-out;
+}
+.setQuantity .cartButton:hover{
+    background-color: #363535fa;
+}
+.setQuantity input, .setQuantity button{
+    text-align: center;
+    border: none;
+    outline: none;
+    padding: .8rem 2rem;
+    font-size: 1rem;
+    width: 30px;
+    cursor: pointer;
+    background-color: rgb(236, 236, 236);
+}
+.productPagePrice label{
+    font-size: 1.5rem;
+    font-weight: 400;
+}
+.productPagePrice span{
+    font-weight: 400;
+    font-size: 2.5rem;
+}
+.tag{
+    background-color: var(--lightGreen);
+    color: white;
+    font-size: 1rem;
+    font-weight: 400;
+    padding: 2px 10px;
+    border-radius: 5px;
+    margin-right: 5px;
+}

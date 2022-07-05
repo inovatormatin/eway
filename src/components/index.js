@@ -13,6 +13,10 @@ export { default as ShopItems } from "./Shop/ShopItems/ShopItems";
 export { default as BlogCard } from "./Blog/BlogCard/BlogCard";
 export { default as MiniCard } from "./Blog/MiniCard/MiniCard";
 
+// Productpage comp export ...
+export { default as Preview } from "./Productpage/Preview/Preview";
+export { default as ProductpageDetail } from "./Productpage/ProductpageDetail/ProductpageDetail";
+
 // Login export ...
 export { default as Login } from "./Login/Login";
 
