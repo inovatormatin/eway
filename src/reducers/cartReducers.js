@@ -1,18 +1,23 @@
 import {
-    CART_ADD_ITEM,
-    CART_REMOVE_ITEM
-} from '../actions/index'
+  ADD_TO_CART,
+  REMOVE_FROM_CART,
+  INCREASE_QUANTITY,
+  DEACREASE_QUANTITY,
+} from "../actions/index";
 
-const userProducts = {
-    products: []
-}
+export const initialState = {
+  productList : [],
+  totalAmount : 0,
+};
 
-export const userCartReducer = (state = userProducts, action) => {
+export const cartReducer = (state = initialState, action) => {
     switch (action.type) {
-        case CART_ADD_ITEM:
-            return { products: action.payload };
-        case CART_REMOVE_ITEM:
-            return { products: action.payload };
+        case ADD_TO_CART:
+            return { ...state, productList : action.payload };
+        // case BLOGS_REQUEST_SUCCESS:
+        //     return { ...state, loading: false, blogs: action.payload, error: null };
+        // case BLOGS_REQUEST_FAIL:
+        //     return { ...state, loading: false, blogs: null, error: action.payload };
         default:
             return state;
     }

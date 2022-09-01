@@ -1,7 +1,12 @@
 import React from 'react'
 import './productpageDetail.css'
+import { useSelector, useDispatch } from 'react-redux/es/exports'
+import { cart } from "../../../actions/cartAction"
 
 const ProductpageDetail = ({name, description, price, tags}) => {
+    const dispatch = useDispatch();
+    const cartState = useSelector(state => state.cart);
+    console.log(cartState);
     return (
         <div className='productPageDetail'>
             <h1>{name}</h1>
@@ -19,7 +24,7 @@ const ProductpageDetail = ({name, description, price, tags}) => {
                     <span>
                         <button>-</button>
                         <input type="text" defaultValue='1' />
-                        <button>+</button>
+                        <button onClick={() => dispatch(cart("add"))}>+</button>
                     </span>
                     {/* add to cart button */}
                     <span className='cartButton'>

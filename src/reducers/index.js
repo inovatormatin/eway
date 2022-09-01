@@ -5,14 +5,14 @@ import {
 } from './userReducers'
 import { getallBlogsReducer } from './blogReducers'
 import { getallProductsReducer } from './productReducers'
-import { userCartReducer } from './cartReducers'
+import { cartReducer } from './cartReducers'
 
 const rootReducer = combineReducers({
     userLogin : userLoginReducer,
     userSignup : userSignupReducer,
-    userCart : userCartReducer,
     getallBlogs : getallBlogsReducer,
     getallProducts : getallProductsReducer,
+    cart : cartReducer
 });
 
 export default rootReducer;
