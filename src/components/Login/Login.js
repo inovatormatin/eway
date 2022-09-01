@@ -41,12 +41,18 @@ const Login = ({ update }) => {
     const signupHandler = (e) => {
         e.preventDefault();
         signupData.password === signupData.checkpassword ?
-        dispatch(userSignup(signupData)) :
-        toast.error("Password not matched !");
+            dispatch(userSignup(signupData)) :
+            toast.error("Password not matched !");
     }
-    
+
     useEffect(() => {
-        signupState.user ? setForm(true) : setForm(false);
+        if (signupState.user) {
+            setForm(true);
+            setLoginData({
+                email: "",
+                password: ""
+            });
+        }
     }, [signupState]);
 
     return (
@@ -64,7 +70,7 @@ const Login = ({ update }) => {
                         <input type="email" name='email' value={loginData.email} placeholder='Enter your email id' onChange={onchangeoflogin} required />
                         <input type="password" name='password' value={loginData.password} placeholder='Password' onChange={onchangeoflogin} required />
                         <button type='submit'>
-                            {userState.loading ? <SpinLoader /> : "Login Account" }
+                            {userState.loading ? <SpinLoader /> : "Login Account"}
                         </button>
                     </form>
                     <span>Don't have account ?</span>

@@ -1,5 +1,5 @@
 .loginBox {
-  position: absolute;
+  position: fixed;
   top: 0;
   width: -webkit-fill-available;
   height: 100vh;

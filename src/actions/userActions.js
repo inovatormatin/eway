@@ -7,7 +7,7 @@ import {
     USER_SIGNUP_REQUEST,
     USER_SIGNUP_SUCCESS,
     USER_SIGNUP_FAIL,
-    USER_LOGOUT,
+    USER_LOGOUT
 } from './index'
 import axios from 'axios'
 import { toast } from 'react-toastify';
@@ -62,6 +62,7 @@ export const userLogin = (email, password) => async (dispatch) => {
                     email: user.email,
                 }
             });
+            console.log(user)
             toast.success(`Welcome ${user.name}`);
         } else {
             dispatch({
@@ -79,6 +80,7 @@ export const userLogin = (email, password) => async (dispatch) => {
     } 
 };
 
+// user sign Up
 export const userSignup = (userInfo) => async (dispatch) => {
     dispatch({
         type: USER_SIGNUP_REQUEST,
@@ -115,3 +117,4 @@ export const userLogout = () => (dispatch) => {
         type: USER_LOGOUT
     });
 };
+

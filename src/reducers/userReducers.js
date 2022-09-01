@@ -7,16 +7,16 @@ import {
     USER_LOGOUT,
     USER_SIGNUP_REQUEST,
     USER_SIGNUP_SUCCESS,
-    USER_SIGNUP_FAIL,
+    USER_SIGNUP_FAIL
 } from '../actions/index'
 
-const initialState = {
+const userState = {
     loading: false,
     authtokken: null,
     userInfo: {}
 }
 
-export const userLoginReducer = (state = initialState, action) => {
+export const userLoginReducer = (state = userState, action) => {
     switch (action.type) {
         case USER_LOGIN_REQUEST:
             return { ...state, loading: true };
@@ -38,11 +38,11 @@ export const userLoginReducer = (state = initialState, action) => {
 export const userSignupReducer = (state = {}, action) => {
     switch (action.type) {
         case USER_SIGNUP_REQUEST:
-            return {loading: true};
+            return { loading: true };
         case USER_SIGNUP_SUCCESS:
-            return {loading: false, user: true, error: null};
+            return { loading: false, user: true, error: null };
         case USER_SIGNUP_FAIL:
-            return {loading: false, user: false, error: action.payload};
+            return { loading: false, user: false, error: action.payload };
         default:
             return state;
     }
