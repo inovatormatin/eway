@@ -1,15 +1,12 @@
 import React from 'react'
 import { useLocation } from 'react-router-dom';
 import { Preview, ProductpageDetail } from '../../components';
-import { useSelector } from 'react-redux';
 import "./Productpage.css"
 
 const Productpage = () => {
-  const userState = useSelector(state => state.userCart);
-  console.log(userState);
   // getting data
   const location = useLocation();
-  const { name, img1, img2, description, price, tags } = location.state.product;
+  const { name, img1, img2, description, price, tags, _id } = location.state.product;
 
   return (
     <div className='productPage'>
@@ -20,6 +17,7 @@ const Productpage = () => {
           description={description}
           price={price}
           tags={tags}
+          id={_id}
         />
       </section>
     </div>

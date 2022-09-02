@@ -31,6 +31,11 @@
 .setQuantity .cartButton:hover{
     background-color: #363535fa;
 }
+.setQuantity input::-webkit-outer-spin-button,
+.setQuantity input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
 .setQuantity input, .setQuantity button{
     text-align: center;
     border: none;

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Login, Userdropdown } from '../../components'
-import { NavLink } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 import {
   AiFillHome,
   AiOutlineShoppingCart,
@@ -51,7 +51,7 @@ const Navbar = () => {
           </ul>
           <ul className="extraOption">
             <li><AiOutlineSearch /></li>
-            <li><AiOutlineShoppingCart /></li>
+            <li><Link to={"/mycart"}><AiOutlineShoppingCart /></Link></li>
             <li onClick={() => {
               if(userState.authtokken !== null){
                 userdropdown ? setUserdropdown(false) : setUserdropdown(true);

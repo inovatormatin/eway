@@ -1,0 +1,26 @@
+.mycart{
+    max-width: 1080px;
+    margin: auto;
+    padding: 20px;
+}
+.cartItem{
+    display: flex;
+    align-items: center;
+    background-color: gray;
+    padding: 1rem;
+}
+.cartItem img{
+    border-radius: 130px;
+    width: 130px;
+    aspect-ratio: 1/1;
+}
+.cartItemAbout, .cartItemAmount{
+    margin: 0 2rem;
+}
+.cartItemAbout h4{
+    font-size: 1.5rem;
+    margin: 2px 0;
+}
+.cartItemAbout p{
+    font-size: .8rem;
+}
