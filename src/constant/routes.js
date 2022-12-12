@@ -1,4 +1,4 @@
-const eway = "https://ewayserver.herokuapp.com/api/";
+const eway = "https://eway-server.vercel.app/api/";
 
 // auth routes
 export const login = eway + 'users/login';
