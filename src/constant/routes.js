@@ -17,3 +17,8 @@ export const addproduct = eway + 'products/addblog';
 export const getallproducts = eway + 'products/getallproducts';
 export const updateproduct = eway + 'products/updateproduct/'; // product id required
 export const deleteproduct = eway + 'products/deleteproduct/'; // product id required
+
+// cart routes
+export const addcart = eway + 'carts/createcartproduct';
+export const updatecart = eway + 'carts/updatecartproduct/'; // user id required
+export const getcartbyid = eway + 'carts/getcartproduct/'; // user id required

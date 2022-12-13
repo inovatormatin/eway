@@ -4,9 +4,10 @@ import "./MyCart.css"
 
 const MyCart = () => {
   const userState = useSelector((state) => state.userLogin);
+  console.log(userState)
   return (
     <div className="mycart">
-      {userState.authtokken !== null ? (
+      {userState.authtokken === null ? (
         <div>Please login to see your cart.</div>
       ) : (
         <div>
