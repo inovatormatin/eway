@@ -25,6 +25,5 @@ export const getallProducts = () => async (dispatch) => {
             type: PRODUCTS_REQUEST_FAIL,
             payload: productsData.data,
         });
-        console.log(productsData.data);
     };
 }

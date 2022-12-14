@@ -3,7 +3,7 @@ import './Blog.css'
 import {RingLoader, BlogCard, MiniCard} from '../../components'
 import { VscSearch } from "react-icons/vsc";
 import { useDispatch, useSelector } from 'react-redux'
-import { getallBlogs } from '../../actions/blogActtions'
+import { getallBlogs } from '../../actions/blogActions'
 
 const Blog = () => {
   const dispatch = useDispatch();

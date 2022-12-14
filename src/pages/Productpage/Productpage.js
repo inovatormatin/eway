@@ -18,6 +18,7 @@ const Productpage = () => {
           price={price}
           tags={tags}
           id={_id}
+          primaryImg={img1}
         />
       </section>
     </div>

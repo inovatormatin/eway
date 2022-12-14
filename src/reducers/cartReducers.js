@@ -1,19 +1,25 @@
 import {
   ADD_TO_CART,
-  REMOVE_FROM_CART,
-  INCREASE_QUANTITY,
-  DEACREASE_QUANTITY,
+  FETCH_CART,
+  GET_CART_BY_ID,
+  CLEAN_CART,
 } from "../actions/index";
 
 export const initialState = {
-  productList : [],
-  totalAmount : 0,
+  fetching : false,
+  cart : [],
 };
 
 export const cartReducer = (state = initialState, action) => {
     switch (action.type) {
+        case FETCH_CART:
+            return { ...state, fetching: true, cart : action.payload};
+        case GET_CART_BY_ID:
+            return { ...state, fetching: false, cart : action.payload };
         case ADD_TO_CART:
-            return { ...state, productList : action.payload };
+            return { ...state, cart : action.payload };
+        case CLEAN_CART:
+            return { ...state, cart : action.payload };
         // case BLOGS_REQUEST_SUCCESS:
         //     return { ...state, loading: false, blogs: action.payload, error: null };
         // case BLOGS_REQUEST_FAIL:

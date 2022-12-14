@@ -10,8 +10,10 @@ import {
 import logo from '../../SVG/whiteEway.svg'
 import './Navbar.css'
 import { useSelector } from "react-redux";
+import Cookies from 'universal-cookie'
 
 const Navbar = () => {
+  const cookies = new Cookies()
   const userState = useSelector(state => state.userLogin);
   const [userform, setUserform] = useState(false);
   const [userdropdown, setUserdropdown] = useState(false);
@@ -25,12 +27,13 @@ const Navbar = () => {
   const activeLi = {
     color: "#61ce70",
   };
-
+  let tkn = cookies.get('tkn');
+  
   useEffect(() => {
-    if(userState.authtokken !== null){
+    if(tkn !== undefined){
       setUserform(false)
     }
-  }, [userState]);
+  }, [userState]); // eslint-disable-line
 
   return (
     <>
@@ -53,7 +56,7 @@ const Navbar = () => {
             <li><AiOutlineSearch /></li>
             <li><Link to={"/mycart"}><AiOutlineShoppingCart /></Link></li>
             <li onClick={() => {
-              if(userState.authtokken !== null){
+              if(tkn !== undefined){
                 userdropdown ? setUserdropdown(false) : setUserdropdown(true);
               } else {
                 userform ? setUserform(false) : setUserform(true);

@@ -1,19 +1,22 @@
 import React from 'react'
 import './userdropdown.css'
-import { toast } from 'react-toastify';
+import { useNavigate } from 'react-router';
 import { FiLogOut } from "react-icons/fi";
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { userLogout } from '../../actions/userActions';
+import { cleanCart } from '../../actions/cartAction';
 
 const Userdropdown = ({update}) => {
+  let navigate = useNavigate();
   const dispatch = useDispatch();
-  const userState = useSelector(state => state.userLogin);
-  const { name, email } = userState.userInfo;
+  let name = localStorage.getItem('userName')
+  let email = localStorage.getItem('userEmail')
   const logout = () => {
     dispatch(userLogout());
+    dispatch(cleanCart());
     update(false);
-    toast.success('Logged out !')
-  }
+    navigate('/')
+  } 
   return (
     <div className='userDropdown'>
         <div className='upperTriangle'></div>

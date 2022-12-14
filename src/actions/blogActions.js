@@ -25,6 +25,5 @@ export const getallBlogs = () => async (dispatch) => {
             type: BLOGS_REQUEST_FAIL,
             payload: blogData.data,
         });
-        console.log(blogData.data);
     };
 }
