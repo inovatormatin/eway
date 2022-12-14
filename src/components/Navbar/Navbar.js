@@ -7,7 +7,7 @@ import {
   AiOutlineSearch,
   AiOutlineUser
 } from "react-icons/ai";
-import logo from '../../SVG/whiteEway.svg'
+import logo from '../../img/logo/whiteEway@4x.png'
 import './Navbar.css'
 import { useSelector } from "react-redux";
 import Cookies from 'universal-cookie'
