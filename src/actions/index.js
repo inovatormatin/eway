@@ -31,5 +31,5 @@ export const GET_CART_BY_ID = 'GET_CART_BY_ID';
 export const ADD_TO_CART = 'ADD_TO_CART';
 export const CLEAN_CART = 'CLEAN_CART';
 export const REMOVE_FROM_CART = 'REMOVE_FROM_CART';
-export const INCREASE_QUANTITY = 'INCREASE_QUANTITY';
-export const DEACREASE_QUANTITY = 'DEACREASE_QUANTITY';
+export const UPDATE_CART = 'UPDATE_CART';
+export const MODIFY_CART = 'MODIFY_CART';

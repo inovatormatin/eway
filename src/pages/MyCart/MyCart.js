@@ -1,15 +1,33 @@
-import React from "react";
-import { useSelector } from "react-redux";
+import React, { useState } from "react";
+import { useSelector, useDispatch } from "react-redux";
 import "./MyCart.css";
 import { RingLoader } from "../../components/MyUtils/Loaders";
 import Cookies from "universal-cookie";
 import { AiOutlineShoppingCart } from "react-icons/ai";
+import { modifyCart, updateCart } from "../../actions/cartAction";
+import { toast } from "react-toastify";
 
 const MyCart = () => {
+  const dispatch = useDispatch();
   const cookies = new Cookies();
   let tkn = cookies.get("tkn");
+  const [placeOrUpdate, setPlaceOrUpdate] = useState(true);
   const userState = useSelector((state) => state.userLogin);
   const userCart = useSelector((state) => state.cart);
+  const updateQnt = (val, action, id) => {
+    userCart.cart.filter((item) => {
+      setPlaceOrUpdate(false);
+      if (item.id === id && action === "dec") {
+        val !== 1
+          ? (item.quanitity = val - 1)
+          : toast.error(`Minimum Quantity 1 required.`);
+      } else if (item.id === id && action === "inc") {
+        item.quanitity = val + 1;
+      }
+      return null;
+    });
+    dispatch(modifyCart(userCart.cart));
+  };
   return (
     <div className="mycart">
       {userState.authtokken === null && tkn === undefined ? (
@@ -23,13 +41,21 @@ const MyCart = () => {
         <div>
           <nav>
             <h1>Your Shopping Cart</h1>
-            {/* {true ? (
+            {placeOrUpdate ? (
               <button style={{ backgroundColor: "var(--lightGreen2)" }}>
                 Place Order
               </button>
             ) : (
-              <button style={{ backgroundColor: "blue" }}>Update Cart</button>
-            )} */}
+              <button
+                style={{ backgroundColor: "blue" }}
+                onClick={() => {
+                  dispatch(updateCart(userCart.cart));
+                  setPlaceOrUpdate(true);
+                }}
+              >
+                Update Cart
+              </button>
+            )}
           </nav>
           <section>
             {userCart.cart.length > 0 ? (
@@ -43,12 +69,31 @@ const MyCart = () => {
                         <p>Product Id _{item.id.slice(0, 7)}</p>
                       </div>
                       <span className="cartItemAmount">
-                        <button>-</button>
-                        <input type="number" defaultValue={item.quanitity} />
-                        <button>+</button>
+                        <button
+                          onClick={() =>
+                            updateQnt(item.quanitity, "dec", item.id)
+                          }
+                        >
+                          -
+                        </button>
+                        <input
+                          type="number"
+                          value={item.quanitity}
+                          onChange={() => {}}
+                        />
+                        <button
+                          onClick={() =>
+                            updateQnt(item.quanitity, "inc", item.id)
+                          }
+                        >
+                          +
+                        </button>
                       </span>
                     </div>
-                    <h2>Total : $ {item.productPrice * item.quanitity} <br /><span>( per unit $ {item.productPrice} )</span></h2>
+                    <h2>
+                      Total : $ {item.productPrice * item.quanitity} <br />
+                      <span>( per unit $ {item.productPrice} )</span>
+                    </h2>
                   </div>
                 );
               })

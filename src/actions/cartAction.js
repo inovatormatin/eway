@@ -2,12 +2,28 @@ import {
   ADD_TO_CART,
   FETCH_CART,
   GET_CART_BY_ID,
-  CLEAN_CART
+  CLEAN_CART,
+  MODIFY_CART,
 } from "./index";
 import { toast } from "react-toastify";
 import axios from "axios";
 import { getcartbyid, updatecart } from "../constant/routes";
 import Cookies from "universal-cookie";
+
+const update = async (list) => {
+  const cookies = new Cookies();
+  let userId = await cookies.get("ui");
+  let token = await cookies.get("tkn");
+  let config = {
+    headers: {
+      "auth-token": token,
+      "Content-Type": "application/json",
+    },
+  };
+  axios
+    .put(updatecart + userId, { cart: [...list] }, config)
+    .catch((err) => console.error("Something went wrong !"));
+};
 
 export const cart = (action, list) => async (dispatch) => {
   if (action === "add") {
@@ -15,20 +31,23 @@ export const cart = (action, list) => async (dispatch) => {
       type: ADD_TO_CART,
       payload: [...list],
     });
-    const cookies = new Cookies();
-    let userId = await cookies.get("ui");
-    let token = await cookies.get("tkn");
-    let config = {
-      headers: {
-        "auth-token": token,
-        "Content-Type": "application/json",
-      },
-    };
-    axios.put(updatecart + userId, { cart: [...list] }, config);
+    update(list)
     toast.success(`Product Added`);
   } else {
     console.log("Please enter a valid action");
   }
+};
+
+export const modifyCart = (cart) => async (dispatch) => {
+  dispatch({
+    type: MODIFY_CART,
+    cart: [...cart],
+  });
+};
+
+export const updateCart = (list) => async (dispatch) => {
+  update(list);
+  toast.success(`Cart Updated`);
 };
 
 export const getCartbyUser = (action) => async (dispatch) => {
@@ -67,6 +86,6 @@ export const getCartbyUser = (action) => async (dispatch) => {
 export const cleanCart = () => async (dispatch) => {
   dispatch({
     type: CLEAN_CART,
-    payload : []
-  })
-}
+    payload: [],
+  });
+};
