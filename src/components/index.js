@@ -32,3 +32,7 @@ export { default as Footer } from "./Footer/Footer";
 // myUtils exports ...
 export { default as Toast } from "./MyUtils/Toast"
 export { RingLoader, SpinLoader } from "./MyUtils/Loaders"
+
+// 404 ...
+export { default as Pagenotfound } from "./404/Pagenotfound";
+export { default as UnderDev } from "./404/UnderDev";

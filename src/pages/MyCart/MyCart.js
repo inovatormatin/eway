@@ -92,7 +92,7 @@ const MyCart = () => {
                     </div>
                     <h2>
                       Total : $ {item.productPrice * item.quanitity} <br />
-                      <span>( per unit $ {item.productPrice} )</span>
+                      <span>per unit $ {item.productPrice}</span>
                     </h2>
                   </div>
                 );
