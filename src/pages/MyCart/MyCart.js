@@ -4,6 +4,7 @@ import "./MyCart.css";
 import { RingLoader } from "../../components/MyUtils/Loaders";
 import Cookies from "universal-cookie";
 import { AiOutlineShoppingCart } from "react-icons/ai";
+import { MdDeleteOutline } from "react-icons/md";
 import { modifyCart, updateCart } from "../../actions/cartAction";
 import { toast } from "react-toastify";
 
@@ -62,6 +63,7 @@ const MyCart = () => {
               userCart.cart.map((item) => {
                 return (
                   <div key={item.id} className="cartItem">
+                    <span className="removeButton"><MdDeleteOutline/></span>
                     <img src={item.primaryImg} alt={item.name} />
                     <div>
                       <div className="cartItemAbout">

@@ -12,6 +12,26 @@ body {
   --skinny2: #f8f8f2;
 }
 
+/* width */
+::-webkit-scrollbar {
+  width: 7px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: black;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: var(--lightGreen);
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: var(--lightGreen2);
+}
+
 a{
   text-decoration: none;
   font-weight: 400;
