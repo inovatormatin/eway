@@ -1,12 +1,13 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import "./MyCart.css";
 import { RingLoader } from "../../components/MyUtils/Loaders";
 import Cookies from "universal-cookie";
 import { AiOutlineShoppingCart } from "react-icons/ai";
 import { MdDeleteOutline } from "react-icons/md";
-import { modifyCart, updateCart } from "../../actions/cartAction";
+import { updateCart } from "../../actions/cartAction";
 import { toast } from "react-toastify";
+import { getCartbyUser } from "../../actions/cartAction";
 
 const MyCart = () => {
   const dispatch = useDispatch();
@@ -15,9 +16,10 @@ const MyCart = () => {
   const [placeOrUpdate, setPlaceOrUpdate] = useState(true);
   const userState = useSelector((state) => state.userLogin);
   const userCart = useSelector((state) => state.cart);
+  const [newCart, setNewCart] = useState([]);
+
   const updateQnt = (val, action, id) => {
-    userCart.cart.filter((item) => {
-      setPlaceOrUpdate(false);
+    newCart.filter((item) => {
       if (item.id === id && action === "dec") {
         val !== 1
           ? (item.quanitity = val - 1)
@@ -27,8 +29,24 @@ const MyCart = () => {
       }
       return null;
     });
-    dispatch(modifyCart(userCart.cart));
+    setNewCart([...newCart])
+    if (JSON.stringify(userCart.cart) === JSON.stringify(newCart)) {
+      setPlaceOrUpdate(true);
+    } else {
+      setPlaceOrUpdate(false);
+    }
   };
+
+  useEffect(() => {
+    if (tkn !== undefined) {
+      dispatch(getCartbyUser("getCartbyUser"));
+    }
+  }, []) // eslint-disable-line
+
+  useEffect(() => {
+    setNewCart(JSON.parse(JSON.stringify(userCart.cart)));
+  }, [userCart.cart]) // eslint-disable-line
+
   return (
     <div className="mycart">
       {userState.authtokken === null && tkn === undefined ? (
@@ -59,11 +77,11 @@ const MyCart = () => {
             )}
           </nav>
           <section>
-            {userCart.cart.length > 0 ? (
-              userCart.cart.map((item) => {
+            {newCart.length > 0 ? (
+              newCart.map((item) => {
                 return (
                   <div key={item.id} className="cartItem">
-                    <span className="removeButton"><MdDeleteOutline/></span>
+                    <span className="removeButton"><MdDeleteOutline /></span>
                     <img src={item.primaryImg} alt={item.name} />
                     <div>
                       <div className="cartItemAbout">
@@ -81,7 +99,7 @@ const MyCart = () => {
                         <input
                           type="number"
                           value={item.quanitity}
-                          onChange={() => {}}
+                          onChange={() => { }}
                         />
                         <button
                           onClick={() =>
