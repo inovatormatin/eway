@@ -5,7 +5,7 @@ import { RingLoader } from "../../components/MyUtils/Loaders";
 import Cookies from "universal-cookie";
 import { AiOutlineShoppingCart } from "react-icons/ai";
 import { MdDeleteOutline } from "react-icons/md";
-import { updateCart } from "../../actions/cartAction";
+import { updateCart, deleteProduct } from "../../actions/cartAction";
 import { toast } from "react-toastify";
 import { getCartbyUser } from "../../actions/cartAction";
 
@@ -36,6 +36,14 @@ const MyCart = () => {
       setPlaceOrUpdate(false);
     }
   };
+
+  const removeItem = async(id) => {
+    let tempCart = newCart.filter((item) => {
+      return item.id !== id
+    })
+    setNewCart(tempCart);
+    dispatch(deleteProduct(id))
+  }
 
   useEffect(() => {
     if (tkn !== undefined) {
@@ -68,7 +76,7 @@ const MyCart = () => {
               <button
                 style={{ backgroundColor: "blue" }}
                 onClick={() => {
-                  dispatch(updateCart(userCart.cart));
+                  dispatch(updateCart(newCart));
                   setPlaceOrUpdate(true);
                 }}
               >
@@ -81,7 +89,7 @@ const MyCart = () => {
               newCart.map((item) => {
                 return (
                   <div key={item.id} className="cartItem">
-                    <span className="removeButton"><MdDeleteOutline /></span>
+                    <span className="removeButton" onClick={() => removeItem(item.id)}><MdDeleteOutline /></span>
                     <img src={item.primaryImg} alt={item.name} />
                     <div>
                       <div className="cartItemAbout">

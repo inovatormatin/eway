@@ -22,3 +22,4 @@ export const deleteproduct = eway + 'products/deleteproduct/'; // product id req
 export const addcart = eway + 'carts/createcartproduct';
 export const updatecart = eway + 'carts/updatecartproduct/'; // user id required
 export const getcartbyid = eway + 'carts/getcartproduct/'; // user id required
+export const removeProduct = eway + 'carts/deleteproduct/'; // user id and product id required :uid/:productId

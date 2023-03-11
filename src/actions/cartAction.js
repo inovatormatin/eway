@@ -7,7 +7,7 @@ import {
 } from "./index";
 import { toast } from "react-toastify";
 import axios from "axios";
-import { getcartbyid, updatecart } from "../constant/routes";
+import { getcartbyid, updatecart, removeProduct } from "../constant/routes";
 import Cookies from "universal-cookie";
 
 const update = async (list) => {
@@ -48,6 +48,25 @@ export const modifyCart = (cart) => async (dispatch) => {
 export const updateCart = (list) => async (dispatch) => {
   update(list);
   toast.success(`Cart Updated`);
+};
+
+export const deleteProduct = (productId) => async (dispatch) => {
+  const cookies = new Cookies();
+  let userId = await cookies.get("ui");
+  let token = await cookies.get("tkn");
+  let config = {
+    headers: {
+      "auth-token": token,
+      "Content-Type": "application/json",
+    },
+  };
+  axios
+    .delete(removeProduct + `${userId}/${productId}`, config)
+    .then(res => {
+      console.log(res)
+      toast.success("Item Removed")
+    })
+    .catch((err) => console.error("Something went wrong !"));
 };
 
 export const getCartbyUser = (action) => async (dispatch) => {
