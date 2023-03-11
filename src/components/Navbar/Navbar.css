@@ -37,6 +37,7 @@
 }
 .extraOption{
     display: flex;
+    align-items: center;
 }
 .extraOption svg{
     color: white;

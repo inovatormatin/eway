@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 import { Routes, Route, } from "react-router-dom"
-import { Home, Shop, Blog, Blogpage, Productpage, MyCart, About, Contact } from "./pages"
+import { Home, Shop, Blog, Blogpage, Productpage, MyCart, SearchPage, About, Contact } from "./pages"
 import { Navbar, Footer, Toast, UnderDev } from "./components"
 import { useDispatch, useSelector } from 'react-redux'
 import { getallProducts } from './actions/productActions'
@@ -24,6 +24,7 @@ const App = () => {
           <Route exact path="/blog/:id" element={<Blogpage />} />
           <Route exact path="/shop/:id" element={<Productpage />} />
           <Route path="/about" element={<About />} />
+          <Route path="/search/:keyword" element={<SearchPage />} />
           <Route path="/contact" element={<Contact />} />
         </Routes>
         <Footer />

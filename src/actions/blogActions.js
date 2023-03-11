@@ -18,7 +18,7 @@ export const getallBlogs = () => async (dispatch) => {
     if(blogData.status === 200){
         dispatch({
             type : BLOGS_REQUEST_SUCCESS,
-            payload: blogData.data,
+            payload: blogData.data.reverse(),
         });
     } else {
         dispatch({

@@ -30,6 +30,7 @@ export { default as Userdropdown } from "./Userdropdown/Userdropdown";
 export { default as Footer } from "./Footer/Footer";
 
 // myUtils exports ...
+export { default as BlogCardforsearch } from "./MyUtils/MUI/BlogCardforsearch"
 export { default as Toast } from "./MyUtils/Toast"
 export { RingLoader, SpinLoader } from "./MyUtils/Loaders"
 

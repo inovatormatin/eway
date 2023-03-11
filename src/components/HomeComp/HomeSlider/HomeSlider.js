@@ -28,7 +28,9 @@ const HomeSlider = () => {
                 <Link to='./blog'>
                   <button className='readMore'>READ MORE</button>
                 </Link>
-                <button className='showMore'>SHOP NOW</button>
+                <Link to='./shop'>
+                  <button className='showMore'>SHOP NOW</button>
+                </Link>
               </div>
             </section>
           </div>
@@ -44,7 +46,9 @@ const HomeSlider = () => {
                 <Link to='./blog'>
                   <button className='readMore'>READ MORE</button>
                 </Link>
-                <button className='showMore'>SHOP NOW</button>
+                <Link to='./shop'>
+                  <button className='showMore'>SHOP NOW</button>
+                </Link>
               </div>
             </section>
           </div>

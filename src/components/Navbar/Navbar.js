@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from "react";
 import { Login, Userdropdown } from '../../components'
+import Searchbar from "./Searchbar";
 import { NavLink, Link } from "react-router-dom";
 import {
   AiFillHome,
   AiOutlineShoppingCart,
-  AiOutlineSearch,
+  // AiOutlineSearch,
   AiOutlineUser
 } from "react-icons/ai";
 import logo from '../../img/logo/whiteEway@4x.png'
@@ -53,7 +54,8 @@ const Navbar = () => {
             )}
           </ul>
           <ul className="extraOption">
-            <li><AiOutlineSearch /></li>
+            {/* <li><AiOutlineSearch /></li> */}
+            <li><Searchbar /></li>
             <li><Link to={"/mycart"}><AiOutlineShoppingCart /></Link></li>
             <li onClick={() => {
               if(tkn !== undefined){
