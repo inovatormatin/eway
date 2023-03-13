@@ -33,3 +33,8 @@ export const CLEAN_CART = 'CLEAN_CART';
 export const REMOVE_FROM_CART = 'REMOVE_FROM_CART';
 export const UPDATE_CART = 'UPDATE_CART';
 export const MODIFY_CART = 'MODIFY_CART';
+
+// Utils action
+export const FETCH_SEARCH = 'FETCH_SEARCH';
+export const SEARCH_RESULT = 'SEARCH_RESULT';
+export const SEARCH_FAIL = 'SEARCH_FAIL';

@@ -5,6 +5,9 @@ export const login = eway + 'users/login';
 export const signup = eway + 'users/signup';
 export const getuser = eway + 'users/getuser';
 
+// Search route
+export const searchKeyword = eway + 'search/byuser/'; // keyword in param required
+
 // blog routes
 export const addblog = eway + 'blogs/addblog';
 export const getallblogs = eway + 'blogs/getallblogs';

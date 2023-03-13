@@ -1,4 +1,4 @@
-.searchpage .results{
+.searchpage .results {
   max-width: 1240px;
   min-height: 140px;
   margin: 10px auto;
@@ -13,19 +13,29 @@
 .searchpage h1 {
   max-width: 1240px;
   margin: 0 auto;
-  padding: 5px 50px 0 50px;
+  padding: 5px 30px 0 30px;
 }
 .searchpage hr {
-    width: 50px;
-    margin-top: 2px;
-    margin-left: 50px;
-    height: 4px;
-    background-color: var(--lightGreen2);
-    border: none;
+  width: 50px;
+  margin-top: 5px;
+  margin-left: 30px;
+  height: 4px;
+  background-color: var(--lightGreen2);
+  border: none;
 }
-.blogsSectionsearchpage > div{
-    max-width: 1240px;
-    margin: 35px auto 0 auto;
-    display: flex;
-    justify-content: space-around;
+.blogsSectionsearchpage > div {
+  max-width: 1220px;
+  margin: 20px auto 0 auto;
+  display: flex;
+  justify-content: space-between;
+}
+.blogRes > div{
+  max-width: 1220px;
+  margin: 20px auto 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-gap: 20px;
+}
+.productRes, .blogRes{
+  margin-top: 15px;
 }

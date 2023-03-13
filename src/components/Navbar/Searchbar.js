@@ -3,8 +3,11 @@ import { styled, alpha } from '@mui/material/styles';
 import InputBase from '@mui/material/InputBase';
 import { AiOutlineSearch } from "react-icons/ai";
 import { useNavigate } from "react-router-dom";
+import { getSearchData } from '../../actions/utilsAction'
+import { useDispatch } from 'react-redux'
 
 const Searchbar = () => {
+    const dispatch = useDispatch();
     const navigate = useNavigate();
     const Search = styled('div')(({ theme }) => ({
         position: 'relative',
@@ -21,7 +24,6 @@ const Searchbar = () => {
         },
     }));
     const SearchIconWrapper = styled('div')(({ theme }) => ({
-        // padding: theme.spacing(0, 2),
         height: '100%',
         position: 'absolute',
         pointerEvents: 'none',
@@ -48,7 +50,8 @@ const Searchbar = () => {
     }));
     const onEnter = (e) => {
         if(e.keyCode === 13){
-            navigate(`/search/${e.target.value}`)
+            dispatch(getSearchData(e.target.value));
+            navigate(`/search/${e.target.value}`);
         }
     }
     return (

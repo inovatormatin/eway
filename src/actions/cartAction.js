@@ -63,7 +63,6 @@ export const deleteProduct = (productId) => async (dispatch) => {
   axios
     .delete(removeProduct + `${userId}/${productId}`, config)
     .then(res => {
-      console.log(res)
       toast.success("Item Removed")
     })
     .catch((err) => console.error("Something went wrong !"));

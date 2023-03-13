@@ -11,18 +11,18 @@ import {
 
 const BlogCardforsearch = ({ data }) => {
     return (
-        <Card sx={{ maxWidth: 345, backgroundColor : "#e3e3e3" }}>
+        <Card sx={{ maxWidth: 285, backgroundColor : "#e3e3e3" }}>
             <CardMedia
                 sx={{ height: 180 }}
                 image={data.img}
                 title={data.title}
             />
             <CardContent>
-                <Typography gutterBottom variant="h5" component="div">
+                <Typography gutterBottom variant="h6" component="div">
                     {data.title}
                 </Typography>
                 <Typography variant="body2" color="text.secondary">
-                    {data.description.slice(0, 200)}...
+                    {data.description.slice(0, 100)}...
                 </Typography>
             </CardContent>
             <CardActions>
