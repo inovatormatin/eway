@@ -1,44 +1,54 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import './ShopItems.css'
-import { BsFillGrid3X3GapFill } from "react-icons/bs";
 import { useSelector } from 'react-redux'
-// BsList
-import { Product, RingLoader } from '../../index'
+import { Product, RingLoader, Dropdown } from '../../index'
 
 const ShopItems = () => {
     const productState = useSelector(state => state.getallProducts);
     const { products } = productState;
     const [totalProduct, setTotalProduct] = useState(8)
+    const [catOption, setCatOption] = useState('All Products');
+    const [filteredProduct, setFilteredProduct] = useState([]);
     const loadmore = () => {
         setTotalProduct(totalProduct + 8)
     };
+    const filterArray = async () => {
+        let productArray = await products.filter(item => {
+            return item.category.toString().includes(catOption) === true ? item : null
+        })
+        setFilteredProduct(productArray);
+    }
+    useEffect(() => {
+        if (products !== null) {
+            if (catOption === 'All Products') {
+                setFilteredProduct([...products])
+            } else {
+                filterArray()
+            }
+        }
+    }, [catOption, products]) // eslint-disable-line
     return (
         <>
             {products !== null ?
                 <>
                     <nav className='shopItemNav'>
-                        <div className='rightNav'>
-                            <span>All Products</span>
-                            <span>Hot Products</span>
-                            <span>Sales Products</span>
-                        </div>
+                        <Dropdown catOption={catOption} setCatOption={setCatOption} />
                         <div className='leftNav'>
                             <span>
                                 {`Showing 1 - 
-                                ${totalProduct > products.length ? 
-                                products.length : 
-                                totalProduct} of ${products.length} 
+                                ${totalProduct > filteredProduct.length ?
+                                    filteredProduct.length :
+                                        totalProduct} of ${filteredProduct.length} 
                                 results`}
                             </span>
-                            <span>Filter +</span>
+                            {/* <span>Filter +</span>
                             <span>
                                 <BsFillGrid3X3GapFill />
-                                {/* <BsList /> */}
-                            </span>
+                            </span> */}
                         </div>
                     </nav>
                     <section className='itemgallery'>
-                        {products.slice(0, totalProduct).map(((product, index) =>
+                        {filteredProduct.slice(0, totalProduct).map(((product, index) =>
                             <Product key={index} product={product} />
                         ))}
                     </section>

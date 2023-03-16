@@ -8,6 +8,7 @@ export { default as  Product } from "./HomeComp/Product/Product";
 
 // Shop comp exports ...
 export { default as ShopItems } from "./Shop/ShopItems/ShopItems";
+export { default as Dropdown } from "./Shop/Dropdown/Dropdown";
 
 // Blog comp export ...
 export { default as BlogCard } from "./Blog/BlogCard/BlogCard";

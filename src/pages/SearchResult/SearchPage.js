@@ -37,8 +37,9 @@ const SearchPage = () => {
                         : ""}
                     {searchState.results.productResult.length !== 0
                         ? <div className='productRes'>
-                            <h1>Item related to '{keyword}'</h1>
-                            <hr />
+                            <h1>Item related to '{keyword}'
+                                <hr />
+                            </h1>
                             <section className='itemgallery'>
                                 {searchState.results.productResult.map(((product, index) =>
                                     <Product key={index} product={product} />
@@ -48,8 +49,9 @@ const SearchPage = () => {
                         : ""}
                     {searchState.results.blogResult.length !== 0
                         ? <div className='blogRes'>
-                            <h1>Blog related '{keyword}'</h1>
-                            <hr />
+                            <h1>Blog related '{keyword}'
+                                <hr />
+                            </h1>
                             <div>
                                 {searchState.results.blogResult.map((item, index) => {
                                     return <BlogCardforsearch key={index} data={item} />
@@ -58,8 +60,9 @@ const SearchPage = () => {
                         </div>
                         : ""}
                     <div className="latestFashion">
-                        <h1>Our Latest Fashion</h1>
-                        <hr />
+                        <h1>Our Latest Fashion
+                            <hr />
+                        </h1>
                         {products !== null && products.length > 29 ?
                             <section className='itemgallery'>
                                 {products.slice(24, 28).map(((product, index) =>
@@ -69,8 +72,9 @@ const SearchPage = () => {
                             : ""}
                     </div>
                     <div className='blogsSectionsearchpage'>
-                        <h1>Explore more</h1>
-                        <hr />
+                        <h1>Explore more
+                            <hr />
+                        </h1>
                         <div>
                             {blogs !== null ?
                                 blogs.slice(0, 4).map((item, index) => {
