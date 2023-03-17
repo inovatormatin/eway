@@ -1,9 +1,12 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import './Shop.css'
 import ShopItems from '../../components/Shop/ShopItems/ShopItems'
 import { Link } from 'react-router-dom'
 
 const Shop = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  })
   return (
     <div className='shop'>
       <div className='shopTitle'>

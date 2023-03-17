@@ -1,7 +1,9 @@
 import React from "react";
+import { useNavigate } from 'react-router-dom';
 import "./Categories.css";
 
 const Categories = () => {
+  const navigate = useNavigate()
   const myData = [
     {
       image:
@@ -12,7 +14,7 @@ const Categories = () => {
     {
       image:
         "https://res.cloudinary.com/inovatormatin/image/upload/v1653646901/eway/category/category2_u3iqzo.jpg",
-      title: "Mens Collection",
+      title: "Men Collection",
       alt: "category2",
     },
     {
@@ -22,10 +24,17 @@ const Categories = () => {
       alt: "category3",
     },
   ];
+  const clickhandler = (value) => {
+    navigate('/shop', {
+      state: {
+        category: value
+      }
+    })
+  }
   return (
     <section className="categories">
       {myData.map((card, index) => (
-        <div className="Card" key={index}>
+        <div className="Card" key={index} onClick={() => clickhandler(card.title)}>
           <img className="CardImg" src={card.image} alt={card.alt} />
           <div className="Cardtext">
             <h3>{card.title}</h3>

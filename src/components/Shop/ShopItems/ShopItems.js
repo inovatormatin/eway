@@ -26,6 +26,10 @@ const ShopItems = () => {
                 filterArray()
             }
         }
+        if (window.history.state.usr !== null) {
+            setCatOption(window.history.state.usr.category)
+            window.history.state.usr = null;
+        }
     }, [catOption, products]) // eslint-disable-line
     return (
         <>
@@ -37,7 +41,7 @@ const ShopItems = () => {
                             <span>
                                 {`Showing 1 - 
                                 ${totalProduct > filteredProduct.length ?
-                                    filteredProduct.length :
+                                        filteredProduct.length :
                                         totalProduct} of ${filteredProduct.length} 
                                 results`}
                             </span>

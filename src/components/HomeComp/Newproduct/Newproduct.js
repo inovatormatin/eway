@@ -15,7 +15,7 @@ const Newproduct = () => {
         </section>
         <section className='npgallery'>
             {products !== null ?
-            products.slice(0, 4).map(((product, index) => 
+            products.slice(8, 12).map(((product, index) => 
             <Product key={index} product={product}/>
             )) 
             : ''}

@@ -40,9 +40,6 @@ const Dropdown = (props) => {
         },
         {
             name: "Jeans"
-        },
-        {
-            name: "Bags"
         }
     ]
 
