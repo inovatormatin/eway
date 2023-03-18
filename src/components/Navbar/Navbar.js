@@ -1,12 +1,11 @@
 import React, { useState, useEffect } from "react";
-import { Login, Userdropdown } from '../../components'
+import { Login } from '../../components'
 import Searchbar from "./Searchbar";
+import ProfileDroper from "./ProfileDroper";
 import { NavLink, Link } from "react-router-dom";
 import {
   AiFillHome,
   AiOutlineShoppingCart,
-  // AiOutlineSearch,
-  AiOutlineUser
 } from "react-icons/ai";
 import logo from '../../img/logo/whiteEway@4x.png'
 import './Navbar.css'
@@ -29,9 +28,9 @@ const Navbar = () => {
     color: "#61ce70",
   };
   let tkn = cookies.get('tkn');
-  
+
   useEffect(() => {
-    if(tkn !== undefined){
+    if (tkn !== undefined) {
       setUserform(false)
     }
   }, [userState]); // eslint-disable-line
@@ -54,25 +53,24 @@ const Navbar = () => {
             )}
           </ul>
           <ul className="extraOption">
-            {/* <li><AiOutlineSearch /></li> */}
             <li><Searchbar /></li>
             <li><Link to={"/mycart"}><AiOutlineShoppingCart /></Link></li>
             <li onClick={() => {
-              if(tkn !== undefined){
+              if (tkn !== undefined) {
                 userdropdown ? setUserdropdown(false) : setUserdropdown(true);
               } else {
                 userform ? setUserform(false) : setUserform(true);
               }
             }}>
-              <AiOutlineUser />
+              <ProfileDroper />
             </li>
           </ul>
         </div>
-        {userdropdown ?
+        {/* {userdropdown ?
           <Userdropdown update={setUserdropdown} />
           :
           null
-        }
+        } */}
       </nav>
       {userform ?
         <Login update={setUserform} />

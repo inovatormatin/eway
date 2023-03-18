@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./Contact.css";
 import { useSelector, useDispatch } from "react-redux";
 import { SpinLoader } from "../../components"
@@ -14,6 +14,7 @@ const Contact = () => {
   const dispatch = useDispatch();
   const contactState = useSelector(state => state.sendMessage);
 
+  // on input set values 
   const onChangeHandler = (e) => {
     let obj = {
       ...userMessage,
@@ -22,6 +23,7 @@ const Contact = () => {
     setUserMessage(obj)
   };
 
+  // on form submit
   const submitHandler = (e) => {
     e.preventDefault();
     dispatch(sendMessageContact(userMessage));
@@ -32,6 +34,11 @@ const Contact = () => {
     }
     setUserMessage(obj)
   };
+
+  // to scroll on top automatically
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  })
 
   let userName = localStorage.getItem("userName");
   let userEmail = localStorage.getItem("userEmail");
@@ -77,11 +84,6 @@ const Contact = () => {
             rows="5"
             placeholder="Your message*"
           />
-          {/* {contactState.loading ?
-            <button type="submit">
-            Submit
-            </button>
-          } */}
           {
             <button type="submit" disabled={contactState.loading}>
               {contactState.loading ?

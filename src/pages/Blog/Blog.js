@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import './Blog.css'
 import { RingLoader, BlogCard, MiniCard } from '../../components'
-import { VscSearch } from "react-icons/vsc";
+// import { VscSearch } from "react-icons/vsc";
 import { useDispatch, useSelector } from 'react-redux'
 import { getallBlogs } from '../../actions/blogActions'
 import { Link } from 'react-router-dom'
@@ -11,6 +11,7 @@ const Blog = () => {
   const blogState = useSelector(state => state.getallBlogs);
   const { blogs } = blogState;
   useEffect(() => {
+    window.scrollTo(0, 0)
     dispatch(getallBlogs());
   }, [dispatch]);
   return (
@@ -37,10 +38,10 @@ const Blog = () => {
           }
         </section>
         <section className='latestBlogs'>
-          <span className='searchBar'>
+          {/* <span className='searchBar'>
             <input type="text" />
             <button><VscSearch /></button>
-          </span>
+          </span> */}
           <h4>Latest Posts</h4>
           {blogs !== null ?
             blogs.slice(0, 3).map((blog, index) =>

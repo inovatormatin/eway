@@ -1,10 +1,16 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import './blogpage.css'
 import { useLocation, Link } from "react-router-dom";
 
 const Blogpage = () => {
     const location = useLocation();
     const { author, description, id, img, title, date } = location.state.data;
+    
+    // to scroll on top automatically
+    useEffect(() => {
+        window.scrollTo(0, 0)
+    })
+    
     return (
         <div id={id} className="blogpage">
             <div className='blogPageTitle'>
@@ -14,7 +20,7 @@ const Blogpage = () => {
                         <strong>Home </strong>
                     </Link>
                     <Link to='/blog'>
-                        / Blog  
+                        / Blog
                     </Link>
                     <span> / {title}</span>
                 </p>
