@@ -38,3 +38,6 @@ export const MODIFY_CART = 'MODIFY_CART';
 export const FETCH_SEARCH = 'FETCH_SEARCH';
 export const SEARCH_RESULT = 'SEARCH_RESULT';
 export const SEARCH_FAIL = 'SEARCH_FAIL';
+export const FETCH_CONTACT_US = 'FETCH_CONTACT_US';
+export const CONTACT_US_SUCCESS = 'CONTACT_US_SUCCESS';
+export const CONTACT_US_FAIL = 'CONTACT_US_FAIL';

@@ -4,7 +4,8 @@ import {
     userSignupReducer,
 } from './userReducers'
 import {
-    getSearchResult
+    getSearchResult,
+    sendMessageResult
 } from './utilsReducers'
 import { getallBlogsReducer } from './blogReducers'
 import { getallProductsReducer } from './productReducers'
@@ -16,7 +17,8 @@ const rootReducer = combineReducers({
     getallBlogs : getallBlogsReducer,
     getallProducts : getallProductsReducer,
     cart : cartReducer,
-    searchKeyword : getSearchResult
+    searchKeyword : getSearchResult,
+    sendMessage : sendMessageResult
 });
 
 export default rootReducer;

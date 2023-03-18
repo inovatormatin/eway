@@ -8,6 +8,9 @@ export const getuser = eway + 'users/getuser';
 // Search route
 export const searchKeyword = eway + 'search/byuser/'; // keyword in param required
 
+// Contact us route
+export const contactUs = eway + 'contact/sendmessage';
+
 // blog routes
 export const addblog = eway + 'blogs/addblog';
 export const getallblogs = eway + 'blogs/getallblogs';
