@@ -46,7 +46,7 @@
   cursor: pointer;
 }
 .profileDroper {
-    z-index: 1;
+  z-index: 1;
 }
 .profileDroper button {
   background-color: transparent;
@@ -56,23 +56,26 @@
 .profileDroper button:hover {
   background-color: transparent !important;
 }
-.menues-nav svg{
-    color: rgba(27, 27, 27, 0.852);
-    padding: 0;
-    margin: 0 9px 0 0;
-    width: max-content;
-    font-size: 1.3rem;
-    font-weight: 500;
+.menues-nav svg {
+  color: rgba(27, 27, 27, 0.852);
+  padding: 0;
+  margin: 0 9px 0 0;
+  width: max-content;
+  font-size: 1.3rem;
+  font-weight: 500;
 }
-.menues-nav li{
-    color: rgba(27, 27, 27, 0.852);
-    font-weight: 500;
+.menues-nav li {
+  color: rgba(27, 27, 27, 0.852);
+  font-weight: 500;
 }
-.userinfo{
-    padding: 0rem 1rem .2rem 1rem;
+.userinfo {
+  padding: 0rem 1rem 0.8rem 1rem;
+  background-color: var(--lightGreen2);
+  border-radius: inherit;
 }
-.userinfo p{
-    margin: 0;
-    padding: 0.5rem 0 0.2rem 0 ;
-    font-weight: 500;
+.userinfo p {
+  margin: 0;
+  padding: 0.5rem 0 0.2rem 0;
+  font-weight: 400;
+  color: white;
 }

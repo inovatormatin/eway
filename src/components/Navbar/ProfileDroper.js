@@ -52,6 +52,10 @@ const ProfileDroper = () => {
         dispatch(cleanCart());
         navigate('/')
     }
+
+    let userName = localStorage.getItem('userName')
+    let userEmail = localStorage.getItem('userEmail')
+
     useEffect(() => {
         if (prevOpen.current === true && open === false) {
             anchorRef.current.focus();
@@ -98,8 +102,8 @@ const ProfileDroper = () => {
                         >
                             <Paper>
                                 <div className='userinfo'>
-                                    <p>{localStorage.getItem('userName')}</p>
-                                    <p>{localStorage.getItem('userEmail')}</p>
+                                    <p>{userName.charAt(0).toUpperCase() + userName.slice(1)}</p>
+                                    <p>{userEmail}</p>
                                 </div>
                                 <ClickAwayListener onClickAway={handleClose}>
                                     <MenuList
