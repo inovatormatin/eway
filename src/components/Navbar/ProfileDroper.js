@@ -23,7 +23,7 @@ const ProfileDroper = () => {
     const anchorRef = React.useRef(null);
 
     const handleToggle = () => {
-        if(localStorage.getItem('userName') !== null){
+        if (localStorage.getItem('userName') !== null) {
             setOpen((prevOpen) => !prevOpen);
         }
     };
@@ -101,10 +101,10 @@ const ProfileDroper = () => {
                             }}
                         >
                             <Paper>
-                                <div className='userinfo'>
+                                {userName !== null && <div className='userinfo'>
                                     <p>{userName.charAt(0).toUpperCase() + userName.slice(1)}</p>
                                     <p>{userEmail}</p>
-                                </div>
+                                </div>}
                                 <ClickAwayListener onClickAway={handleClose}>
                                     <MenuList
                                         autoFocusItem={open}
@@ -114,8 +114,23 @@ const ProfileDroper = () => {
                                         className="dropdownMenue"
                                     >
                                         <Divider />
-                                        <MenuItem onClick={handleClose}><FiSettings /> Setting</MenuItem>
-                                        <MenuItem onClick={handleClose}><FiShoppingBag />My Orders</MenuItem>
+                                        <MenuItem
+                                            onClick={(e) => {
+                                                handleClose(e)
+                                                navigate('/myprofile')
+                                            }}
+                                            >
+                                            <FiSettings />
+                                            Setting
+                                        </MenuItem>
+                                        <MenuItem
+                                            onClick={(e) => {
+                                                handleClose(e)
+                                                navigate('/placeorder')
+                                            }}>
+                                            <FiShoppingBag />
+                                            My Orders
+                                        </MenuItem>
                                         <MenuItem
                                             sx={{ color: "red !important" }}
                                             onClick={(e) => {

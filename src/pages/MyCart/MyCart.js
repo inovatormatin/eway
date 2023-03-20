@@ -8,15 +8,18 @@ import { MdDeleteOutline } from "react-icons/md";
 import { updateCart, deleteProduct } from "../../actions/cartAction";
 import { toast } from "react-toastify";
 import { getCartbyUser } from "../../actions/cartAction";
+import { useNavigate } from 'react-router-dom'
 
 const MyCart = () => {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
   const cookies = new Cookies();
   let tkn = cookies.get("tkn");
   const [placeOrUpdate, setPlaceOrUpdate] = useState(true);
   const userState = useSelector((state) => state.userLogin);
   const userCart = useSelector((state) => state.cart);
   const [newCart, setNewCart] = useState([]);
+  const [totalAmount, setTotalAmount] = useState(0);
 
   const updateQnt = (val, action, id) => {
     newCart.filter((item) => {
@@ -35,14 +38,23 @@ const MyCart = () => {
     } else {
       setPlaceOrUpdate(false);
     }
+    calculateTotal();
   };
 
-  const removeItem = async(id) => {
+  const removeItem = async (id) => {
     let tempCart = newCart.filter((item) => {
       return item.id !== id
     })
     setNewCart(tempCart);
     dispatch(deleteProduct(id))
+  }
+
+  const calculateTotal = () => {
+    let value = 0
+    for (let i = 0; i < newCart.length; i++) {
+      value = value + (newCart[i].productPrice * newCart[i].quanitity)
+    }
+    setTotalAmount(value);
   }
 
   useEffect(() => {
@@ -54,6 +66,10 @@ const MyCart = () => {
   useEffect(() => {
     setNewCart(JSON.parse(JSON.stringify(userCart.cart)));
   }, [userCart.cart]) // eslint-disable-line
+
+  useEffect(() => {
+    calculateTotal();
+  }, [newCart]) // eslint-disable-line
 
   return (
     <div className="mycart">
@@ -68,21 +84,24 @@ const MyCart = () => {
         <div>
           <nav>
             <h1>Your Shopping Cart</h1>
-            {placeOrUpdate ? (
-              <button style={{ backgroundColor: "var(--lightGreen2)" }}>
-                Place Order
-              </button>
-            ) : (
-              <button
-                style={{ backgroundColor: "blue" }}
-                onClick={() => {
-                  dispatch(updateCart(newCart));
-                  setPlaceOrUpdate(true);
-                }}
-              >
-                Update Cart
-              </button>
-            )}
+            <div>
+              <strong>Total : $ {totalAmount} </strong>
+              {placeOrUpdate ? (
+                <button onClick={() => navigate('/placeorder')} style={{ backgroundColor: "var(--lightGreen2)" }}>
+                  Place Order
+                </button>
+              ) : (
+                <button
+                  style={{ backgroundColor: "blue" }}
+                  onClick={() => {
+                    dispatch(updateCart(newCart));
+                    setPlaceOrUpdate(true);
+                  }}
+                >
+                  Update Cart
+                </button>
+              )}
+            </div>
           </nav>
           <section>
             {newCart.length > 0 ? (
