@@ -28,7 +28,7 @@
 .form h4 {
   font-size: 1.2rem;
   font-weight: 500;
-  margin-bottom: 3rem;
+  margin: 0 0 2rem 0;
 }
 .form {
   width: 35rem;
@@ -60,5 +60,17 @@
   width: -webkit-fill-available;
   background-color: black;
   color: white;
-  margin-bottom: 3rem;
+}
+.form section {
+  width: 100%;
+  display: flex;
+  gap: 3%;
+}
+
+.formNote {
+  width: -webkit-fill-available;
+  margin: 0 0 1rem 0;
+  font-weight: 500;
+  font-size: 0.8rem;
+  color: red;
 }
