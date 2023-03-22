@@ -3,7 +3,7 @@
   top: 0;
   width: -webkit-fill-available;
   height: 100vh;
-  z-index: 2;
+  z-index: 3;
   background-color: var(--skinny2);
   padding: 2rem 3rem;
 }

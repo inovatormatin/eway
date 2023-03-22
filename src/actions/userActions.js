@@ -14,7 +14,7 @@ import { toast } from "react-toastify";
 import { login, getuser, signup, addcart } from "../constant/routes";
 import Cookies from "universal-cookie";
 import { getCartbyUser } from "./cartAction";
- 
+
 export const userLogin = (email, password) => async (dispatch) => {
   const cookies = new Cookies();
   // initialise login process
@@ -70,6 +70,14 @@ export const userLogin = (email, password) => async (dispatch) => {
           id: user._id,
           name: user.name,
           email: user.email,
+          phoneNumber: user.phoneNumber,
+          secondaryPhoneNumber: user.secondaryPhoneNumber,
+          address: user.address,
+          house_flat_no: user.house_flat_no,
+          city: user.city,
+          state: user.state,
+          landmark: user.landmark,
+          pincode: user.pincode
         },
       });
 
@@ -103,6 +111,42 @@ export const userLogin = (email, password) => async (dispatch) => {
     toast.error(response);
   }
 };
+
+// get user info
+export const getUserInfo = () => async (dispatch) => {
+  const cookies = new Cookies();
+  let authtokken = cookies.get('tkn')
+  const getuserConfig = {
+    headers: {
+      "auth-token": authtokken,
+      "Content-Type": "application/json",
+    },
+  };
+  const user = await axios
+    .get(getuser, getuserConfig)
+    .then((res) => res.data)
+    .catch((error) => error.response.data.error);
+
+  if (user._id) {
+    // store user info
+    dispatch({
+      type: USER_DETAIL_SUCCESS,
+      payload: {
+        id: user._id,
+        name: user.name,
+        email: user.email,
+        phoneNumber: user.phoneNumber,
+        secondaryPhoneNumber: user.secondaryPhoneNumber,
+        address: user.address,
+        house_flat_no: user.house_flat_no,
+        city: user.city,
+        state: user.state,
+        landmark: user.landmark,
+        pincode: user.pincode
+      },
+    });
+  }
+}
 
 // user sign Up
 export const userSignup = (userInfo) => async (dispatch) => {
