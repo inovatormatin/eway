@@ -4,6 +4,7 @@ export const USER_LOGIN_SUCCESS = 'USER_LOGIN_SUCCESS';
 export const USER_LOGIN_FAIL = 'USER_LOGIN_FAIL';
 
 // login action { getting user info. }
+export const USER_DATA_REQUEST = 'USER_DATA_REQUEST';
 export const USER_DETAIL_SUCCESS = 'USER_DETAIL_SUCCESS';
 export const USER_DETAIL_FAIL = 'USER_DETAIL_FAIL';
 

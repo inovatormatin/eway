@@ -4,6 +4,7 @@ const eway = "https://eway-server.vercel.app/api/";
 export const login = eway + 'users/login';
 export const signup = eway + 'users/signup';
 export const getuser = eway + 'users/getuser';
+export const updateuser = eway + 'users/updateuser/'; // user id required
 
 // Search route
 export const searchKeyword = eway + 'search/byuser/'; // keyword in param required

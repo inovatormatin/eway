@@ -2,6 +2,7 @@ import {
   USER_LOGIN_REQUEST,
   USER_LOGIN_SUCCESS,
   USER_LOGIN_FAIL,
+  USER_DATA_REQUEST,
   USER_DETAIL_SUCCESS,
   USER_DETAIL_FAIL,
   USER_SIGNUP_REQUEST,
@@ -11,10 +12,11 @@ import {
 } from "./index";
 import axios from "axios";
 import { toast } from "react-toastify";
-import { login, getuser, signup, addcart } from "../constant/routes";
+import { login, getuser, signup, addcart, updateuser } from "../constant/routes";
 import Cookies from "universal-cookie";
 import { getCartbyUser } from "./cartAction";
 
+// user login
 export const userLogin = (email, password) => async (dispatch) => {
   const cookies = new Cookies();
   // initialise login process
@@ -67,7 +69,7 @@ export const userLogin = (email, password) => async (dispatch) => {
       dispatch({
         type: USER_DETAIL_SUCCESS,
         payload: {
-          id: user._id,
+          // id: user._id,
           name: user.name,
           email: user.email,
           phoneNumber: user.phoneNumber,
@@ -132,7 +134,7 @@ export const getUserInfo = () => async (dispatch) => {
     dispatch({
       type: USER_DETAIL_SUCCESS,
       payload: {
-        id: user._id,
+        // id: user._id,
         name: user.name,
         email: user.email,
         phoneNumber: user.phoneNumber,
@@ -181,6 +183,7 @@ export const userSignup = (userInfo) => async (dispatch) => {
   }
 };
 
+// user Logout
 export const userLogout = () => (dispatch) => {
   const cookies = new Cookies();
   dispatch({
@@ -191,4 +194,52 @@ export const userLogout = () => (dispatch) => {
   localStorage.removeItem("userEmail");
   localStorage.removeItem("userName");
   toast.success("Logged out !");
+};
+
+// user update
+export const userUpdateInfo = (data) => async(dispatch) => {
+  // fetching user data
+  dispatch({
+    type: USER_DATA_REQUEST,
+  });
+
+  const cookies = new Cookies();
+  let authtokken = cookies.get('tkn')
+  let userId = cookies.get('ui')
+  const getuserConfig = {
+    headers: {
+      "auth-token": authtokken,
+      "Content-Type": "application/json",
+    },
+  };
+  let url = `${updateuser}${userId}`
+  const user = await axios
+    .put(url, data, getuserConfig)
+    .then((res) => {
+      toast.success('Profile Updated !');
+      return res.data
+    })
+    .catch((error) => {
+      toast.error('Profile Updated !');
+      return error.response.data.error
+    });
+    
+  if (user._id) {
+    // store user info
+    dispatch({
+      type: USER_DETAIL_SUCCESS,
+      payload: {
+        name: user.name,
+        email: user.email,
+        phoneNumber: user.phoneNumber,
+        secondaryPhoneNumber: user.secondaryPhoneNumber,
+        address: user.address,
+        house_flat_no: user.house_flat_no,
+        city: user.city,
+        state: user.state,
+        landmark: user.landmark,
+        pincode: user.pincode
+      },
+    });
+  }
 };
