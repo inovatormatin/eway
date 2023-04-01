@@ -10,7 +10,8 @@ export const RingLoader = () => {
         flexDirection: "column",
         margin: "5rem auto",
         color: "#45bd52",
-        width: "100%"
+        width: "100%",
+        minHeight: "290px"
     }
     return (
         <div style={myStyles}>
@@ -20,7 +21,7 @@ export const RingLoader = () => {
                 width={60}
                 color="#45bd52"
             />
-            <h5 style={{margin: '8px auto auto auto'}}>loading...</h5>
+            <h5>loading...</h5>
         </div>
     )
 }
