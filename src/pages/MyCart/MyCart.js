@@ -8,7 +8,7 @@ import { MdDeleteOutline } from "react-icons/md";
 import { updateCart, deleteProduct } from "../../actions/cartAction";
 import { toast } from "react-toastify";
 import { getCartbyUser } from "../../actions/cartAction";
-import { useNavigate } from 'react-router-dom'
+import { useNavigate } from "react-router-dom";
 
 const MyCart = () => {
   const dispatch = useDispatch();
@@ -32,7 +32,7 @@ const MyCart = () => {
       }
       return null;
     });
-    setNewCart([...newCart])
+    setNewCart([...newCart]);
     if (JSON.stringify(userCart.cart) === JSON.stringify(newCart)) {
       setPlaceOrUpdate(true);
     } else {
@@ -43,33 +43,33 @@ const MyCart = () => {
 
   const removeItem = async (id) => {
     let tempCart = newCart.filter((item) => {
-      return item.id !== id
-    })
+      return item.id !== id;
+    });
     setNewCart(tempCart);
-    dispatch(deleteProduct(id))
-  }
+    dispatch(deleteProduct(id));
+  };
 
   const calculateTotal = () => {
-    let value = 0
+    let value = 0;
     for (let i = 0; i < newCart.length; i++) {
-      value = value + (newCart[i].productPrice * newCart[i].quanitity)
+      value = value + newCart[i].productPrice * newCart[i].quanitity;
     }
     setTotalAmount(value);
-  }
+  };
 
   useEffect(() => {
     if (tkn !== undefined) {
       dispatch(getCartbyUser("getCartbyUser"));
     }
-  }, []) // eslint-disable-line
+  }, []); // eslint-disable-line
 
   useEffect(() => {
     setNewCart(JSON.parse(JSON.stringify(userCart.cart)));
-  }, [userCart.cart]) // eslint-disable-line
+  }, [userCart.cart]); // eslint-disable-line
 
   useEffect(() => {
     calculateTotal();
-  }, [newCart]) // eslint-disable-line
+  }, [newCart]); // eslint-disable-line
 
   return (
     <div className="mycart">
@@ -87,7 +87,11 @@ const MyCart = () => {
             <div>
               <strong>Total : $ {totalAmount} </strong>
               {placeOrUpdate ? (
-                <button onClick={() => navigate('/placeorder')} style={{ backgroundColor: "var(--lightGreen2)" }}>
+                <button
+                  onClick={() => navigate("/placeorder")}
+                  disabled={totalAmount === 0 ? true : false}
+                  style={{ backgroundColor: "var(--lightGreen2)" }}
+                >
                   Place Order
                 </button>
               ) : (
@@ -108,7 +112,12 @@ const MyCart = () => {
               newCart.map((item) => {
                 return (
                   <div key={item.id} className="cartItem">
-                    <span className="removeButton" onClick={() => removeItem(item.id)}><MdDeleteOutline /></span>
+                    <span
+                      className="removeButton"
+                      onClick={() => removeItem(item.id)}
+                    >
+                      <MdDeleteOutline />
+                    </span>
                     <img src={item.primaryImg} alt={item.name} />
                     <div>
                       <div className="cartItemAbout">
@@ -126,7 +135,7 @@ const MyCart = () => {
                         <input
                           type="number"
                           value={item.quanitity}
-                          onChange={() => { }}
+                          onChange={() => {}}
                         />
                         <button
                           onClick={() =>
@@ -147,7 +156,7 @@ const MyCart = () => {
             ) : (
               <div className="notLoggedin">
                 <AiOutlineShoppingCart />
-                <p>You haven't added any item in your cart.</p>
+                <p>Your e-way cart is empty.</p>
               </div>
             )}
           </section>

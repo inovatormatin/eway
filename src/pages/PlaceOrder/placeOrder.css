@@ -1,0 +1,115 @@
+.placeOrderPage {
+    width: 1240px;
+    margin: auto;
+    padding: 25px 5px;
+}
+
+.placeOrderPageInfo {
+    display: flex;
+    gap: 3%;
+    justify-content: space-between;
+}
+
+.placeOrderPageInfo>.userInfo>.card {
+    background-color: #fbf5ffae;
+    /* background-color: #eacaffae; */
+    border-radius: 10px;
+    padding: .5rem 1rem;
+    margin-bottom: 1rem;
+    /* box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px; */
+}
+
+.placeOrderPageInfo>.userInfo>.card h4 {
+    margin: .5rem 0;
+    color: #aaaaff;
+}
+
+.placeOrderPageInfo>.userInfo>.card h4 button, .userItems button {
+    float: right;
+    color: white;
+    background-color: #aaaaff;
+    font-size: .7rem;
+    padding: 0.2rem .5rem;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+}
+
+.placeOrderPageInfo>.userInfo>.card h4 button svg, .userItems button svg {
+    margin-left: 5px;
+}
+
+.placeOrderPageInfo>.userInfo {
+    width: 50%;
+}
+
+.placeOrderPageInfo>.userItems {
+    width: 100%;
+}
+
+.cardInfo {
+    display: flex;
+    align-items: flex-start;
+    margin: 0;
+}
+
+.cardInfo p {
+    margin: .5rem 0;
+    font-size: .9rem;
+    line-height: 1.3rem;
+}
+
+.cardInfo p {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.cardInfo svg {
+    margin: .7rem .6rem 0 0;
+}
+
+.confirmOrder {
+    text-align: right;
+}
+
+.confirmOrder button {
+    background-color: var(--lightGreen) !important;
+    color: white !important;
+    padding: .5rem 1rem !important;
+    border-radius: 10px !important;
+}
+
+.orderProductContainer {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-gap: 10px;
+}
+
+.orderProduct {
+    max-width: 180px;
+    padding: 5px;
+    background-color: #fcf8ff;
+    border-radius: 20px;
+    box-shadow: rgba(0, 0, 0, 0.04) 0px 3px 5px;
+}
+
+.orderProduct img {
+    width: 180px;
+    border-radius: 20px;
+}
+
+.orderProduct h4 {
+    margin: .5rem .5rem;
+    color: #aaaaff;
+}
+
+.orderProduct p {
+    font-size: .9rem;
+    font-weight: 500;
+    margin: .2rem 0.5rem;
+}
+
+.orderProduct p span {
+    float: right;
+}
