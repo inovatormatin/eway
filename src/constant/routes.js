@@ -30,3 +30,8 @@ export const addcart = eway + 'carts/createcartproduct';
 export const updatecart = eway + 'carts/updatecartproduct/'; // user id required
 export const getcartbyid = eway + 'carts/getcartproduct/'; // user id required
 export const removeProduct = eway + 'carts/deleteproduct/'; // user id and product id required :uid/:productId
+
+// order routes
+export const placeorder = eway + 'userorder/placeorder'; // authentication required
+export const getorders = eway + 'userorder/getorders/'; // user id required in params + authentication required
+export const cancelorder = eway + 'userorder/cancelorder/'; // order id required in params + authentication required

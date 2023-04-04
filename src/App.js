@@ -7,6 +7,7 @@ import {
   Blogpage,
   Productpage,
   MyCart,
+  Myorders,
   PlaceOrder,
   SearchPage,
   Profile,
@@ -55,6 +56,7 @@ const App = () => {
           <Route path="/shop" element={<Shop />} />
           <Route path="/blog" element={<Blog />} />
           <Route path="/mycart" element={<MyCart />} />
+          <Route path="/myorders" element={<Myorders />} />
           <Route path="/placeorder" element={<PlaceOrder />} />
           <Route path="/myprofile" element={<Profile />} />
           <Route exact path="/blog/:id" element={<Blogpage />} />

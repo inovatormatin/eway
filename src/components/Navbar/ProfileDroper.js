@@ -126,7 +126,7 @@ const ProfileDroper = () => {
                                         <MenuItem
                                             onClick={(e) => {
                                                 handleClose(e)
-                                                navigate('/placeorder')
+                                                navigate('/myorders')
                                             }}>
                                             <FiShoppingBag />
                                             My Orders

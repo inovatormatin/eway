@@ -12,18 +12,22 @@ import { FaRegAddressCard } from "react-icons/fa";
 import { getUserInfo } from "../../actions/userActions";
 import { getCartbyUser } from "../../actions/cartAction";
 import { useDispatch, useSelector } from "react-redux";
+import { useNavigate } from 'react-router-dom'
 import { RingLoader } from "../../components";
 import { Button } from "@mui/material";
 import Cookies from "universal-cookie";
 import { Link } from "react-router-dom";
+import { placeUserOrders } from "../../actions/orderActions";
 
 const PlaceOrder = () => {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
   const [totalAmount, setTotalAmount] = useState(0);
   const userState = useSelector((state) => state.userLogin);
   const userCart = useSelector((state) => state.cart);
   const cookies = new Cookies();
   let tkn = cookies.get("tkn");
+
   const calculateTotal = () => {
     let value = 0;
     for (let i = 0; i < userCart.cart.length; i++) {
@@ -32,6 +36,32 @@ const PlaceOrder = () => {
     }
     setTotalAmount(value);
   };
+
+  const placeorderHandler = () => {
+    let id = cookies.get("ui");
+    let data = {
+      items: userCart.cart,
+      paymentMethod: "Cash on Deleivery",
+      userInfo: {
+        userName: userState.userInfo.name,
+        userEmail: userState.userInfo.email,
+        phone: {
+          phoneNumber : userState.userInfo.phoneNumber,
+          secondaryPhoneNumber : userState.userInfo.secondaryPhoneNumber
+        },
+        address: {
+          city: userState.userInfo.city,
+          state: userState.userInfo.state,
+          landmark: userState.userInfo.landmark,
+          house_flat_no: userState.userInfo.house_flat_no,
+          address: userState.userInfo.address
+        }
+      },
+      userId: id
+    };
+    dispatch(placeUserOrders(data, navigate));
+  }
+
   useEffect(() => {
     if (userState.userInfo.name === undefined) {
       dispatch(getUserInfo());
@@ -47,7 +77,7 @@ const PlaceOrder = () => {
   return (
     <>
       {console.log(userCart)}
-      {userState.userInfo.name !== undefined && userCart.fetching !== true? (
+      {userState.userInfo.name !== undefined && userCart.fetching !== true ? (
         <div className="placeOrderPage">
           <div className="placeOrderPageInfo">
             {/* user Items */}
@@ -160,7 +190,7 @@ const PlaceOrder = () => {
             </div>
           </div>
           <div className="confirmOrder">
-            <Button>Confirm order</Button>
+            <Button onClick={() => placeorderHandler()}>Confirm order</Button>
           </div>
         </div>
       ) : (
