@@ -35,6 +35,9 @@ export { default as BlogCardforsearch } from "./MyUtils/MUI/BlogCardforsearch"
 export { default as Toast } from "./MyUtils/Toast"
 export { RingLoader, SpinLoader } from "./MyUtils/Loaders"
 
+// My orders
+export { default as ProductTable } from "./MyOrder/ProductTable/ProductTable"
+
 // 404 ...
 export { default as Pagenotfound } from "./404/Pagenotfound";
 export { default as UnderDev } from "./404/UnderDev";

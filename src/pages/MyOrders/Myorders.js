@@ -1,6 +1,8 @@
 import React, { useEffect } from 'react'
 import Cookies from "universal-cookie";
 import { useSelector, useDispatch } from "react-redux";
+import { ProductTable } from "../../components"
+import "./Myorders.css"
 import { getallOrders } from "../../actions/orderActions"
 
 const Myorders = () => {
@@ -10,13 +12,17 @@ const Myorders = () => {
     let tkn = cookies.get("tkn");
     useEffect(() => {
         if (tkn !== undefined) {
-            dispatch(getallOrders());
+            // dispatch(getallOrders());
         }
     }, []); // eslint-disable-line
     return (
-        <div>
-            {console.log("userOrders", userOrders) }
-            Myorders
+        <div className='Myorderspage'>
+            {/* {console.log("userOrders", userOrders) } */}
+            <h1>My Orders</h1>
+            <div>
+                <ProductTable />
+                <ProductTable />
+            </div>
         </div>
     )
 }
