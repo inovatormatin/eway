@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useLocation } from 'react-router-dom';
 import { Preview, ProductpageDetail } from '../../components';
 import "./Productpage.css"
@@ -7,6 +7,10 @@ const Productpage = () => {
   // getting data
   const location = useLocation();
   const { name, img1, img2, description, price, tags, _id } = location.state.product;
+
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }) // eslint-disable-line
 
   return (
     <div className='productPage'>

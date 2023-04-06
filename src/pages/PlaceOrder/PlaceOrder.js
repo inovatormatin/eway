@@ -54,6 +54,7 @@ const PlaceOrder = () => {
           state: userState.userInfo.state,
           landmark: userState.userInfo.landmark,
           house_flat_no: userState.userInfo.house_flat_no,
+          pincode: userState.userInfo.pincode,
           address: userState.userInfo.address
         }
       },
@@ -74,9 +75,13 @@ const PlaceOrder = () => {
       dispatch(getCartbyUser("getCartbyUser"));
     }
   }, []); // eslint-disable-line
+
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }) // eslint-disable-line
+  
   return (
     <>
-      {console.log(userCart)}
       {userState.userInfo.name !== undefined && userCart.fetching !== true ? (
         <div className="placeOrderPage">
           <div className="placeOrderPageInfo">

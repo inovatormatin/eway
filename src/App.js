@@ -26,7 +26,6 @@ const App = () => {
   useEffect(() => {
     // Update network status
     const handleStatusChange = () => {
-      console.log("Manish");
       setIsOnline(navigator.onLine);
     };
 

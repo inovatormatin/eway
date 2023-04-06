@@ -71,6 +71,10 @@ const MyCart = () => {
     calculateTotal();
   }, [newCart]); // eslint-disable-line
 
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }) // eslint-disable-line
+
   return (
     <div className="mycart">
       {userState.authtokken === null && tkn === undefined ? (
@@ -135,7 +139,7 @@ const MyCart = () => {
                         <input
                           type="number"
                           value={item.quanitity}
-                          onChange={() => {}}
+                          onChange={() => { }}
                         />
                         <button
                           onClick={() =>

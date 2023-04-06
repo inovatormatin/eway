@@ -1,12 +1,10 @@
 import {
     FETCH_PLACE_ORDER,
-    PLACE_ORDER_RESPONSE,
     PLACE_ORDER_FAIL,
     FETCH_GET_ORDERS,
     GET_ORDERS_RESPONSE,
     GET_ORDERS_FAIL,
     FETCH_DELETE_ORDER,
-    DELETE_ORDER_RESPONSE,
     DELETE_ORDER_FAIL
 } from './index'
 import axios from 'axios'
@@ -88,6 +86,35 @@ export const placeUserOrders = (data, navigate) => async (dispatch) => {
         dispatch({
             type: PLACE_ORDER_FAIL,
             payload: "Something went wrong.",
+        });
+        toast.error(`Something went wrong !`);
+    };
+}
+
+export const cancleUserOrder = (id) => async (dispatch) => {
+    dispatch({
+        type: FETCH_DELETE_ORDER,
+    });
+    const cookies = new Cookies();
+    let token = cookies.get("tkn");
+    let config = {
+        headers: {
+            "auth-token": token,
+            "Content-Type": "application/json",
+        },
+    };
+    // get all Orders request
+    const orderData = await axios.delete(cancelorder + id, config)
+        .then(res => res)
+        .catch(error => error.response.data.error);
+
+    if (orderData.status === 200) {
+        toast.success(`Order Canceled !`);
+        dispatch(getallOrders());
+    } else {
+        dispatch({
+            type: DELETE_ORDER_FAIL,
+            payload: "Unable to delete order.",
         });
         toast.error(`Something went wrong !`);
     };

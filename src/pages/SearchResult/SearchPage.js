@@ -24,13 +24,17 @@ const SearchPage = () => {
         dispatch(getallBlogs());
         checkResult();
     }, []); // eslint-disable-line
+
+    useEffect(() => {
+        window.scrollTo(0, 0)
+    }) // eslint-disable-line
+
     return (
         <div className='searchpage'>
             {searchState.loading === true ?
                 <RingLoader />
                 :
                 <>
-                {console.log(searchState)}
                     {searchState.results.blogResult.length === 0 && searchState.results.productResult.length === 0 ?
                         <div className='results'>
                             <h3>No result found related to '{keyword}'</h3>

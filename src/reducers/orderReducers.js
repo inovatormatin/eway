@@ -5,7 +5,7 @@ import {
     GET_ORDERS_RESPONSE,
     GET_ORDERS_FAIL,
     FETCH_DELETE_ORDER,
-    DELETE_ORDER_RESPONSE,
+    // DELETE_ORDER_RESPONSE,
     DELETE_ORDER_FAIL
 } from '../actions/index'
 
@@ -27,6 +27,10 @@ export const getallOrdersReducer = (state = initialState, action) => {
             return { ...state, loading: true };
         case PLACE_ORDER_FAIL:
             return { ...state, loading: false, orders: null, error: action.payload };
+        case FETCH_DELETE_ORDER:
+            return { ...state, loading: true };
+        case DELETE_ORDER_FAIL:
+            return { ...state, loading: false, error: action.payload };
         default:
             return state;
     }

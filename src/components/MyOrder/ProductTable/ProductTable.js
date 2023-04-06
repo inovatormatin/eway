@@ -1,11 +1,40 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import "./ProductTable.css"
+import { useDispatch } from "react-redux";
 import { CgShoppingBag } from "react-icons/cg";
+import { PopupModal } from "../../index"
+import { cancleUserOrder } from "../../../actions/orderActions";
 
-const ProductTable = () => {
+const ProductTable = ({ data, index }) => {
+    const dispatch = useDispatch()
+    const [open, setOpen] = useState(false);
+    const [totalAmount, setTotalAmount] = useState(0)
+    const [delDate, setDelDate] = useState()
+    const handleClickOpen = () => {
+        setOpen(true);
+    };
+    const handleClose = () => {
+        setOpen(false);
+    };
+    const calculateTotal = () => {
+        let value = 0;
+        for (let i = 0; i < data.items.length; i++) {
+            value = value + data.items[i].productPrice * data.items[i].quanitity;
+        }
+        setTotalAmount(value);
+        let date = new Date(data.orderPlaced)
+        date.setDate(date.getDate() + 7);
+        date = date.toString().split(" ");
+        let newdate = `${date[1]} ${date[2]}, ${date[3]}`;
+        setDelDate(newdate);
+    };
+    useEffect(() => {
+        calculateTotal();
+    })
     return (
         <div className='orderCard'>
-            <h3><span><CgShoppingBag /> 1</span> Ordered on JAN 12, 2023</h3>
+            <PopupModal open={open} handleClose={handleClose} data={data} />
+            <h3><span><CgShoppingBag /> {index}</span> Delivery by {delDate}</h3>
             <table className='myorderTable'>
                 <tbody>
                     <tr>
@@ -16,61 +45,32 @@ const ProductTable = () => {
                         <th>Price</th>
                         <th>Total</th>
                     </tr>
-                    <tr>
-                        <td>1.</td>
-                        <td className='itemImageOrders'>
-                            <img
-                                src="https://res.cloudinary.com/inovatormatin/image/upload/v1653646903/eway/product/product13-1_zkcvcv.jpg"
-                                alt="name"
-                            />
-                        </td>
-                        <td>Bomb Cycle</td>
-                        <td>x8</td>
-                        <td>$ 90</td>
-                        <td>$ 9780</td>
-                    </tr>
-                    <tr>
-                        <td>1.</td>
-                        <td className='itemImageOrders'>
-                            <img
-                                src="https://res.cloudinary.com/inovatormatin/image/upload/v1653646903/eway/product/product13-1_zkcvcv.jpg"
-                                alt="name"
-                            />
-                        </td>
-                        <td>Bomb Cycle</td>
-                        <td>x8</td>
-                        <td>$ 90</td>
-                        <td>$ 9780</td>
-                    </tr>
-                    <tr>
-                        <td>1.</td>
-                        <td className='itemImageOrders'>
-                            <img
-                                src="https://res.cloudinary.com/inovatormatin/image/upload/v1653646903/eway/product/product13-1_zkcvcv.jpg"
-                                alt="name"
-                            />
-                        </td>
-                        <td>Bomb Cycle</td>
-                        <td>x8</td>
-                        <td>$ 90</td>
-                        <td>$ 9780</td>
-                    </tr>
-                    <tr>
-                        <td>1.</td>
-                        <td className='itemImageOrders'>
-                            <img
-                                src="https://res.cloudinary.com/inovatormatin/image/upload/v1653646903/eway/product/product13-1_zkcvcv.jpg"
-                                alt="name"
-                            />
-                        </td>
-                        <td>Bomb Cycle</td>
-                        <td>x8</td>
-                        <td>$ 90</td>
-                        <td>$ 9780</td>
-                    </tr>
+                    {data.items.map((data, index) => {
+                        return (
+                            <tr key={index}>
+                                <td>{index + 1}.</td>
+                                <td className='itemImageOrders'>
+                                    <img
+                                        src={data.primaryImg}
+                                        alt={data.name}
+                                    />
+                                </td>
+                                <td>{data.name}</td>
+                                <td>x{data.quanitity}</td>
+                                <td>$ {data.productPrice}</td>
+                                <td>$ {data.quanitity * data.productPrice}</td>
+                            </tr>
+                        )
+                    })}
                 </tbody>
             </table>
-            <h4><span><button>See Details</button><button className='danger'>Cancel Order</button></span> Total : $ 40404</h4>
+            <h4>
+                <span>
+                    <button onClick={() => handleClickOpen()}>See Details</button>
+                    <button className='danger' onClick={() => dispatch(cancleUserOrder(data._id))}>Cancel Order</button>
+                </span>
+                Total : $ {totalAmount}
+            </h4>
         </div>
     )
 }

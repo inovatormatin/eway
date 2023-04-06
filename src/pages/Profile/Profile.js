@@ -33,9 +33,9 @@ const Profile = () => {
   const onChangeHandler = (e) => {
     let value;
     if (e.target.type === 'number') {
-      if(e.target.value === ""){
+      if (e.target.value === "") {
         value = null
-      }else{
+      } else {
         value = JSON.parse(e.target.value)
       }
     } else {
@@ -65,9 +65,14 @@ const Profile = () => {
     }
     setFormValues(JSON.parse(JSON.stringify(userState.userInfo)));
   }, [userState]) // eslint-disable-line 
+
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }) // eslint-disable-line
+
   return (
     <>
-      {userInfo.name !== undefined && userState.loading !== true?
+      {userInfo.name !== undefined && userState.loading !== true ?
         <div className="profileSetting">
           <h2>
             My Profile
@@ -77,7 +82,7 @@ const Profile = () => {
               <section>
                 <p>
                   <label htmlFor="name"><TiUser />Name</label>
-                  <input name="name" type="text" value={userInfo.name} onChange={e => onChangeHandler(e)} required/>
+                  <input name="name" type="text" value={userInfo.name} onChange={e => onChangeHandler(e)} required />
                 </p>
                 <p>
                   <label htmlFor="email"><HiOutlineMail />Email</label>
@@ -87,7 +92,7 @@ const Profile = () => {
               <section>
                 <p>
                   <label htmlFor="phoneNumber"><GiSmartphone />Phone (primary)</label>
-                  <input name="phoneNumber" type="number" value={userInfo.phoneNumber === null ? "" : userInfo.phoneNumber} onChange={e => onChangeHandler(e)} required/>
+                  <input name="phoneNumber" type="number" value={userInfo.phoneNumber === null ? "" : userInfo.phoneNumber} onChange={e => onChangeHandler(e)} required />
                 </p>
                 <p>
                   <label htmlFor="secondaryPhoneNumber"><BiPhone />Phone (secondary)</label>
@@ -95,13 +100,13 @@ const Profile = () => {
                 </p>
                 <p>
                   <label htmlFor="pincode"><BiMapPin />Pincode</label>
-                  <input name="pincode" type="number" value={userInfo.pincode} onChange={e => onChangeHandler(e)} required/>
+                  <input name="pincode" type="number" value={userInfo.pincode} onChange={e => onChangeHandler(e)} required />
                 </p>
               </section>
               <section>
                 <p>
                   <label htmlFor="city"><GiModernCity />City</label>
-                  <input name="city" type="text" value={userInfo.city} onChange={e => onChangeHandler(e)} required/>
+                  <input name="city" type="text" value={userInfo.city} onChange={e => onChangeHandler(e)} required />
                 </p>
                 <p>
                   <label htmlFor="state"><FaCity />State</label>
@@ -119,7 +124,7 @@ const Profile = () => {
                 </p>
                 <p>
                   <label htmlFor="landmark"><GiIsland />Landmark</label>
-                  <input name="landmark" type="text" value={userInfo.landmark} onChange={e => onChangeHandler(e)} required/>
+                  <input name="landmark" type="text" value={userInfo.landmark} onChange={e => onChangeHandler(e)} required />
                 </p>
               </section>
             </div>

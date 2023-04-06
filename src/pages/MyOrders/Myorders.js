@@ -4,6 +4,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { ProductTable } from "../../components"
 import "./Myorders.css"
 import { getallOrders } from "../../actions/orderActions"
+import { RingLoader } from "../../components/MyUtils/Loaders";
 
 const Myorders = () => {
     const dispatch = useDispatch();
@@ -12,18 +13,39 @@ const Myorders = () => {
     let tkn = cookies.get("tkn");
     useEffect(() => {
         if (tkn !== undefined) {
-            // dispatch(getallOrders());
+            dispatch(getallOrders());
         }
     }, []); // eslint-disable-line
+
+    useEffect(() => {
+        window.scrollTo(0, 0)
+      }) // eslint-disable-line
+      
     return (
-        <div className='Myorderspage'>
-            {/* {console.log("userOrders", userOrders) } */}
-            <h1>My Orders</h1>
-            <div>
-                <ProductTable />
-                <ProductTable />
-            </div>
-        </div>
+        <>
+            {userOrders.loading === true ?
+                <RingLoader />
+                :
+                <div className='Myorderspage'>
+                    <h1>My Orders</h1>
+                    <div>
+                        {userOrders.orders.length > 0 ?
+                            userOrders.orders.map((item, key) => {
+                                return <ProductTable key={key} data={item} index={key + 1} />
+                            })
+                            :
+                            <p
+                                style={{
+                                    textAlign: "center",
+                                    fontWeight: "600"
+                                }}
+                            >You don't have any order.
+                            </p>
+                        }
+                    </div>
+                </div>
+            }
+        </>
     )
 }
 
