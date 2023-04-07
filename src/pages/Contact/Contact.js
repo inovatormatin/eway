@@ -5,6 +5,8 @@ import { SpinLoader } from "../../components"
 import { sendMessageContact } from "../../actions/utilsAction";
 
 const Contact = () => {
+  let userName = localStorage.getItem("userName");
+  let userEmail = localStorage.getItem("userEmail");
   const [userMessage, setUserMessage] = useState({
     name: "",
     email: "",
@@ -26,7 +28,19 @@ const Contact = () => {
   // on form submit
   const submitHandler = (e) => {
     e.preventDefault();
-    dispatch(sendMessageContact(userMessage));
+    if (userName !== null) {
+      let msg = {
+        ...userMessage,
+        name: userName,
+        email: userEmail
+      }
+      alert("up")
+      console.log(msg)
+      dispatch(sendMessageContact(msg));
+    } else {
+      alert("low")
+      dispatch(sendMessageContact(userMessage));
+    }
     let obj = {
       ...userMessage,
       subject: "",
@@ -40,8 +54,6 @@ const Contact = () => {
     window.scrollTo(0, 0)
   })
 
-  let userName = localStorage.getItem("userName");
-  let userEmail = localStorage.getItem("userEmail");
   return (
     <div className="contact">
       <div className="contactTitle">

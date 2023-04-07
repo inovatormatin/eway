@@ -5,9 +5,11 @@ import { toast } from "react-toastify";
 import { SpinLoader } from "../../components";
 import { useDispatch, useSelector } from "react-redux";
 import { userLogin, userSignup } from "../../actions/userActions";
+import { useNavigate } from "react-router-dom";
 
 const Login = ({ update }) => {
     const dispatch = useDispatch();
+    const navigate = useNavigate();
     const userState = useSelector((state) => state.userLogin);
     const signupState = useSelector((state) => state.userSignup);
     const [form, setForm] = useState(true); // conditionaly render login logout form
@@ -39,6 +41,7 @@ const Login = ({ update }) => {
     const loginHandler = (e) => {
         e.preventDefault();
         dispatch(userLogin(loginData.email, loginData.password));
+        navigate('/')
     };
 
     // Signup page function

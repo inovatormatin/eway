@@ -11,7 +11,7 @@ import logo from '../../img/logo/whiteEway@4x.png'
 import './Navbar.css'
 import { useSelector } from "react-redux";
 import Cookies from 'universal-cookie'
-
+ 
 const Navbar = () => {
   const cookies = new Cookies()
   const userState = useSelector(state => state.userLogin);
