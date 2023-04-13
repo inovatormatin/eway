@@ -1,4 +1,9 @@
 .Myorderspage{
     max-width: 1240px;
+    min-height: 44vh;
     margin: auto;
+}
+.Myorderspage h1{
+    border-left: 5px solid var(--lightGreen);
+    padding-left: 15px;
 }

@@ -54,7 +54,7 @@ const Navbar = () => {
           </ul>
           <ul className="extraOption">
             <li><Searchbar /></li>
-            <li><Link to={"/mycart"}><AiOutlineShoppingCart /></Link></li>
+            <li><Link to={"/mycart"} style={{display: "flex"}}><AiOutlineShoppingCart /></Link></li>
             <li onClick={() => {
               if (tkn !== undefined) {
                 userdropdown ? setUserdropdown(false) : setUserdropdown(true);
