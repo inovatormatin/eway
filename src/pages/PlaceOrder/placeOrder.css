@@ -11,7 +11,7 @@
 }
 
 .placeOrderPageInfo>.userInfo>.card {
-    background-color: #f1dcffae;
+    background-color: #e7e7e7;
     /* background-color: #eacaffae; */
     border-radius: 10px;
     padding: .5rem 1rem;
@@ -21,13 +21,13 @@
 
 .placeOrderPageInfo>.userInfo>.card h4 {
     margin: .5rem 0;
-    color: #aaaaff;
+    color: #61ce70;
 }
 
 .placeOrderPageInfo>.userInfo>.card h4 button, .userItems button {
     float: right;
     color: white;
-    background-color: #aaaaff;
+    background-color: #61ce70;
     font-size: .7rem;
     padding: 0.2rem .5rem;
     border-radius: 5px;
@@ -89,7 +89,7 @@
 .orderProduct {
     max-width: 180px;
     padding: 5px;
-    background-color: #f1dcffae;
+    background-color: #e5e5e5ed;
     border-radius: 20px;
     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
@@ -101,7 +101,7 @@
 
 .orderProduct h4 {
     margin: .5rem .5rem;
-    color: #aaaaff;
+    color: #61ce70;
 }
 
 .orderProduct p {
