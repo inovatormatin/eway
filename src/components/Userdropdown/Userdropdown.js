@@ -1,6 +1,6 @@
 import React from 'react'
 import './userdropdown.css'
-import { useNavigate } from 'react-router';
+import { useNavigate } from 'react-router-dom';
 import { FiLogOut } from "react-icons/fi";
 import { useDispatch } from 'react-redux';
 import { userLogout } from '../../actions/userActions';

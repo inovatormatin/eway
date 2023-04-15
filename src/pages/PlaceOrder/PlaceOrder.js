@@ -18,6 +18,7 @@ import { Button } from "@mui/material";
 import Cookies from "universal-cookie";
 import { Link } from "react-router-dom";
 import { placeUserOrders } from "../../actions/orderActions";
+import { toast } from "react-toastify";
 
 const PlaceOrder = () => {
   const dispatch = useDispatch();
@@ -38,29 +39,33 @@ const PlaceOrder = () => {
   };
 
   const placeorderHandler = () => {
-    let id = cookies.get("ui");
-    let data = {
-      items: userCart.cart,
-      paymentMethod: "Cash on Deleivery",
-      userInfo: {
-        userName: userState.userInfo.name,
-        userEmail: userState.userInfo.email,
-        phone: {
-          phoneNumber : userState.userInfo.phoneNumber,
-          secondaryPhoneNumber : userState.userInfo.secondaryPhoneNumber
+    if (userCart.cart.length > 0) {
+      let id = cookies.get("ui");
+      let data = {
+        items: userCart.cart,
+        paymentMethod: "Cash on Deleivery",
+        userInfo: {
+          userName: userState.userInfo.name,
+          userEmail: userState.userInfo.email,
+          phone: {
+            phoneNumber: userState.userInfo.phoneNumber,
+            secondaryPhoneNumber: userState.userInfo.secondaryPhoneNumber
+          },
+          address: {
+            city: userState.userInfo.city,
+            state: userState.userInfo.state,
+            landmark: userState.userInfo.landmark,
+            house_flat_no: userState.userInfo.house_flat_no,
+            pincode: userState.userInfo.pincode,
+            address: userState.userInfo.address
+          }
         },
-        address: {
-          city: userState.userInfo.city,
-          state: userState.userInfo.state,
-          landmark: userState.userInfo.landmark,
-          house_flat_no: userState.userInfo.house_flat_no,
-          pincode: userState.userInfo.pincode,
-          address: userState.userInfo.address
-        }
-      },
-      userId: id
-    };
-    dispatch(placeUserOrders(data, navigate));
+        userId: id
+      };
+      dispatch(placeUserOrders(data, navigate));
+    } else { 
+      toast.error("You Don't have any item in your cart")
+    }
   }
 
   useEffect(() => {
@@ -79,7 +84,7 @@ const PlaceOrder = () => {
   useEffect(() => {
     window.scrollTo(0, 0)
   }) // eslint-disable-line
-  
+
   return (
     <>
       {userState.userInfo.name !== undefined && userCart.fetching !== true ? (

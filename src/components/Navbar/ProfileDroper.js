@@ -11,7 +11,7 @@ import { AiOutlineUser } from "react-icons/ai";
 import { FiShoppingBag, FiSettings } from "react-icons/fi";
 import { IoMdLogOut } from "react-icons/io";
 import { Divider } from '@mui/material';
-import { useNavigate } from 'react-router';
+import { useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { userLogout } from '../../actions/userActions';
 import { cleanCart } from '../../actions/cartAction';
