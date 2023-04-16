@@ -42,9 +42,9 @@ const Blog = () => {
             <input type="text" />
             <button><VscSearch /></button>
           </span> */}
-          <h4>Latest Posts</h4>
+          <h4>Read more</h4>
           {blogs !== null ?
-            blogs.slice(0, 3).map((blog, index) =>
+            blogs.slice(blogs.length - 3, blogs.length).map((blog, index) =>
               <MiniCard key={index} img={blog.img} title={blog.title} description={blog.description} author={blog.author} id={blog._id} date={blog.date.slice(0, 10)} />
             ) :
             <RingLoader />

@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import './ShopItems.css'
 import { useSelector } from 'react-redux'
 import { Product, RingLoader, Dropdown } from '../../index'
+import { Button } from '@mui/material'
 
 const ShopItems = () => {
     const productState = useSelector(state => state.getallProducts);
@@ -43,7 +44,7 @@ const ShopItems = () => {
                                 ${totalProduct > filteredProduct.length ?
                                         filteredProduct.length :
                                         totalProduct} of ${filteredProduct.length} 
-                                results`}
+                                products`}
                             </span>
                             {/* <span>Filter +</span>
                             <span>
@@ -61,9 +62,10 @@ const ShopItems = () => {
             }
             {products === null ?
                 <RingLoader /> :
-                <div className='loadmore'>
-                    <button onClick={() => loadmore()}>Load More</button>
-                </div>
+                totalProduct >= 43 ? "" :
+                    <div className='loadmore'>
+                        <Button size='small' onClick={() => loadmore()}>Load More</Button>
+                    </div>
             }
         </>
     );

@@ -1,34 +1,46 @@
-.itemgallery{
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-gap: 20px;
-    padding: 20px;
-    max-width: 1240px;
-    margin: auto;
+.itemgallery {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-gap: 20px;
+  padding: 20px;
+  max-width: 1240px;
+  margin: auto;
 }
-.shopItemNav{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 20px;
-    max-width: 1240px;
-    margin: auto;
-    margin-top: 1rem;
+.shopItemNav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+  max-width: 1240px;
+  margin: auto;
+  margin-top: 1rem;
 }
-.rightNav span{ padding-left: 10px; cursor: pointer; }
-.leftNav span{ padding-right: 10px; }
-.loadmore{
-    width: max-content;
-    margin: 1rem auto;
+.rightNav span {
+  padding-left: 10px;
+  cursor: pointer;
 }
-.loadmore button{
-    background-color: var(--lightGreen2);
-    color: white;
-    font-size: 1.3rem;
-    padding: .5rem 2rem;
-    border-radius: 5px;
-    transition: 200ms ease-in-out;
+.leftNav span {
+  padding-right: 10px;
 }
-.loadmore button:hover{
-    background-color: var(--lightGreen);
+.loadmore {
+  width: max-content;
+  margin: 1rem auto;
+}
+.loadmore button {
+  background-color: var(--lightGreen2);
+  color: white;
+  padding: 0.5rem 2rem;
+  border-radius: 5px;
+  transition: 200ms ease-in-out;
+}
+.loadmore button:hover {
+  background-color: var(--lightGreen);
+}
+
+/* first break point */
+@media only screen and (max-width: 1020px) {
+  .loadmore button {
+    padding: 0.4rem 1rem;
+    font-size: 0.7rem;
+  }
 }

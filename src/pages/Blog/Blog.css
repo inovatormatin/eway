@@ -63,3 +63,22 @@
     font-weight: 500;
     margin: 0 0 1rem 0;
 }
+
+/* first break point */
+@media only screen and (max-width: 1020px) {
+    .blogArea{
+        grid-gap: 0rem;
+    }
+}
+/* second break point */
+@media only screen and (max-width: 1000px) {
+    .blogArea{
+        max-width: 80%;
+        grid-gap: 2rem;
+        grid-template-columns: auto;
+        grid-template-rows: auto auto;
+    }
+    .latestBlogs{
+        padding: 0 1rem;
+    }
+}
