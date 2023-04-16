@@ -79,3 +79,27 @@
   font-weight: 400;
   color: white;
 }
+
+/* first break point */
+@media only screen and (max-width: 931px) {
+  .navbar{
+    padding: 0.3rem 2rem;
+  }
+  .navbarOptions {
+    padding: 0.5rem 2rem;
+    font-size: 0.8rem;
+  }
+  #navLogo {
+    width: 55px;
+    height: 20px;
+  }
+  .extraOption svg{
+    font-size: 1rem;
+  }
+  .css-1rrgvs4-MuiInputBase-root{
+    font-size: .8rem !important;
+  }
+  .css-1rrgvs4-MuiInputBase-root .MuiInputBase-input {
+    padding: 4px 4px 4px 32px !important;
+  }
+}

@@ -1,43 +1,62 @@
-.bannerSection{
-    display: flex;
-    padding: 2rem 1rem;
+.bannerSection {
+  display: flex;
+  padding: 2rem 1rem;
 }
-.bsc{
-    position: relative;
-    width: 50%;
-    aspect-ratio: 2.1/1;
-    margin: 0 8px;
-    overflow: hidden;
-    cursor: pointer;
+.bsc {
+  position: relative;
+  width: 50%;
+  aspect-ratio: 2.1/1;
+  margin: 0 8px;
+  overflow: hidden;
+  cursor: pointer;
 }
-.bscImg{
-    width: 100%;
-    transition: all ease-in-out 800ms;
+.bscImg {
+  width: 100%;
+  transition: all ease-in-out 800ms;
 }
-.bsc:hover .bscImg{
-    transform: scale(1.05);
+.bsc:hover .bscImg {
+  transform: scale(1.05);
 }
-.bannerOptions{
-    position: absolute;
-    z-index: 1;
-    top: 50%;
-    left: 6%;
+.bannerOptions {
+  position: absolute;
+  z-index: 1;
+  top: auto;
+  left: 6%;
+  bottom: 7%;
 }
-.bannerOptions span{
-    font-weight: 500;
+.bannerOptions span {
+  font-weight: 500;
 }
-.bannerOptions h4{
-    margin: 12px 0;
-    font-size: 1.5rem;
-    font-weight: 400;
+.bannerOptions h4 {
+  margin: 12px 0;
+  font-size: 1.5rem;
+  font-weight: 400;
 }
-.bannerOptions button{
-    padding: 1rem 2rem;
-    font-size: 1rem;
-    background-color: white;
-    transition: all ease-in-out 300ms;
+.bannerOptions button {
+  padding: 1rem 2rem;
+  font-size: 1rem;
+  background-color: white;
+  transition: all ease-in-out 300ms;
 }
-.bannerOptions button:hover{
-    background-color: var(--lightGreen);
-    color: white;
+.bannerOptions button:hover {
+  background-color: var(--lightGreen);
+  color: white;
+}
+
+/* First break point */
+@media only screen and (max-width: 1020px) {
+  .bannerSection {
+    padding: 0 1rem;
+  }
+  .bannerOptions button {
+    padding: 0.5rem 1rem;
+    font-size: 0.8rem;
+  }
+  .bannerOptions h4 {
+    margin: 10px 0;
+    font-size: 1.2rem;
+  }
+  .bannerOptions span {
+    font-size: 0.8rem;
+  }
 }

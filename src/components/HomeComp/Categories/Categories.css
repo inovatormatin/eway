@@ -1,36 +1,52 @@
-.categories{
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-gap: 20px;
-    padding: 20px;
+.categories {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 20px;
+  padding: 20px;
 }
-.Card{
-    cursor: pointer;
-    position: relative;
-    aspect-ratio: 1.85/1;
-    overflow: hidden;
+.Card {
+  cursor: pointer;
+  position: relative;
+  aspect-ratio: 1.85/1;
+  overflow: hidden;
 }
-.CardImg{
-    width: 100%;
-    transition: all ease-in-out 920ms;
+.CardImg {
+  width: 100%;
+  transition: all ease-in-out 920ms;
 }
-.Card:hover .CardImg{
-    transform: scale(1.05);
+.Card:hover .CardImg {
+  transform: scale(1.05);
 }
-.Cardtext{
-    position: absolute;
-    bottom: 8%;
-    left: 5%;
+.Cardtext {
+  position: absolute;
+  bottom: 8%;
+  left: 5%;
 }
-.Cardtext h3{
-    font-size: 1.3rem;
-    margin: 0 0 1rem 0;
-    font-weight: 500;
+.Cardtext h3 {
+  font-size: 1.3rem;
+  margin: 0 0 1rem 0;
+  font-weight: 500;
 }
-.Cardtext button{
-    background-color: transparent;
-    font-size: .9rem;
-    font-weight: 500;
-    padding: 0 0 .5rem 0;
-    border-bottom: solid black 1.2px;
+.Cardtext button {
+  background-color: transparent;
+  font-size: 0.9rem;
+  font-weight: 500;
+  padding: 0 0 0.5rem 0;
+  border-bottom: solid black 1.2px;
+}
+
+/* First break point */
+@media only screen and (max-width: 1025px) {
+  .categories {
+    grid-gap: 10px;
+    padding: 10px;
+  }
+  .Cardtext h3 {
+    font-size: 1rem;
+    margin: 0 0 0.5rem 0;
+  }
+  .Cardtext button {
+    font-size: 0.6rem;
+    padding: 0 0 0.3rem 0;
+  }
 }

@@ -1,24 +1,36 @@
-.ourStore{
-    margin: 2.5rem 0;
+.ourStore {
+  margin: 2.5rem 0;
 }
-.storegallery{
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-gap: 20px;
-    padding: 20px;
-    max-width: 1080px;
-    margin: auto;
+.storegallery {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-gap: 20px;
+  padding: 20px;
+  max-width: 1080px;
+  margin: auto;
 }
-.storeHeading{
-    text-align: center;
-    padding: 2rem 0;
+.storeHeading {
+  text-align: center;
+  padding: 2rem 0;
 }
-.storeHeading span{
-    color: var(--lightGreen);
+.storeHeading span {
+  color: var(--lightGreen);
 }
-.storeHeading h3, .storeHeading p{
-    margin: 10px 0 15px 0;
+.storeHeading h3,
+.storeHeading p {
+  margin: 10px 0 15px 0;
 }
-.storeHeading h3{
-    font-size: 2rem;
+.storeHeading h3 {
+  font-size: 2rem;
+}
+
+/* First break point */
+@media only screen and (max-width: 1025px) {
+  .storeHeading {
+    padding: 0.5rem 0;
+  }
+  .storeHeading p {
+    margin: 10px auto 15px auto;
+    max-width: 90%;
+  }
 }
