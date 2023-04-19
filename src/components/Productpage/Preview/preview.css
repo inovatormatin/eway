@@ -18,3 +18,24 @@
 .selectImage .activeImage{
     border: solid 1px var(--lightGreen2);
 }
+.magnifyBox{
+    width: 400px;
+}
+
+/* second break point */
+@media only screen and (max-width: 1270px) {
+    .imageSection{
+        flex-direction: column-reverse;
+        align-items: center;
+    }
+    .selectImage{
+        flex-direction: row;
+        margin-top: 5px;
+    }
+    .selectImage img{
+        margin-left: 5px;
+    }
+    .magnifyBox{
+        width: 350px;
+    }
+}

@@ -39,13 +39,13 @@ const About = () => {
             beauty, and lifestyle products.
           </p>
 
+          <img src="https://res.cloudinary.com/inovatormatin/image/upload/v1653646910/eway/other/about2_nsnt01.jpg" alt="about2img" />
           <h3>Company Intro</h3>
           <p>
             To provide customers with an exciting shopping experience, superior
             service, and a fine selection of affordable, high-quality fashion,
             beauty, and lifestyle products.
           </p>
-          <img src="https://res.cloudinary.com/inovatormatin/image/upload/v1653646910/eway/other/about2_nsnt01.jpg" alt="about2img" />
         </section>
         <section className='acls'>
           <img src="https://res.cloudinary.com/inovatormatin/image/upload/v1653646901/eway/other/about1_om5e4d.jpg" alt="about1img" />

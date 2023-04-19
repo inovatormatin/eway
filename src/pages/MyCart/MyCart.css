@@ -90,6 +90,7 @@
 .cartItemAbout h4 {
   font-size: 1.5rem;
   margin: 2px 0;
+  max-width: 200px;
 }
 
 .cartItemAbout p {
@@ -124,4 +125,11 @@
 .removeButton svg {
   font-size: 1rem;
   color: white;
+}
+
+/* second break point */
+@media only screen and (max-width: 1120px) {
+  .cartItem{
+    width: 100%;
+  }
 }

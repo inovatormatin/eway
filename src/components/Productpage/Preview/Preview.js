@@ -20,7 +20,7 @@ const Preview = ({img1, img2}) => {
                     onClick={() => imageHandler(img2)} />
             </div>
             {/* magnify component */}
-            <div style={{ width: '400px' }}>
+            <div className='magnifyBox'>
                 <ReactImageMagnify {...{
                     smallImage: {
                         alt: 'Wristwatch by Ted Baker London',

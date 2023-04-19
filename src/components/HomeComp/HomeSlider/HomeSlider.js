@@ -19,25 +19,20 @@ const HomeSlider = () => {
         className="mySwiper">
         <SwiperSlide>
           <div className='banner'>
-            <img className='bannerImg' src="https://res.cloudinary.com/inovatormatin/image/upload/v1681563758/eway/homeSlide/sllider_3_nl2uir.png" alt="banner1" />
+            <img className='bannerImg' src="https://res.cloudinary.com/inovatormatin/image/upload/v1653646901/eway/homeSlide/slider4_gqz07j.jpg" alt="banner3" />
             <section className='offer leftSideOffer'>
-              <span style={{color: "#d23315"}}>REEBOK SPECIAL</span>
-              <h1>IMPOSSIBLE IS<br />NOTHING</h1>
+              <span>SUMMER 30</span>
+              <h1>NEW HOT <br />EVERYTHING</h1>
               <p>CHECK OUT SUMMER <br /> COLLECTION FIRST COME TO GET <br /> THE BEST!</p>
               <div>
                 <Link to='./blog'>
-                  <button className='readMore' style={{backgroundColor: "#d23315"}}>READ MORE</button>
+                  <button className='readMore'>READ MORE</button>
                 </Link>
                 <Link to='./shop'>
                   <button className='showMore'>SHOP NOW</button>
                 </Link>
               </div>
             </section>
-          </div>
-        </SwiperSlide>
-        <SwiperSlide>
-          <div className='banner'>
-            <img className='bannerImg' src="https://res.cloudinary.com/inovatormatin/image/upload/v1681565237/eway/homeSlide/sllider_4_p734lq.png" alt="banner4" />
           </div>
         </SwiperSlide>
         <SwiperSlide>
@@ -60,14 +55,14 @@ const HomeSlider = () => {
         </SwiperSlide>
         <SwiperSlide>
           <div className='banner'>
-            <img className='bannerImg' src="https://res.cloudinary.com/inovatormatin/image/upload/v1653646901/eway/homeSlide/slider4_gqz07j.jpg" alt="banner3" />
+            <img className='bannerImg' src="https://res.cloudinary.com/inovatormatin/image/upload/v1681563758/eway/homeSlide/sllider_3_nl2uir.png" alt="banner1" />
             <section className='offer leftSideOffer'>
-              <span>SUMMER 30</span>
-              <h1>NEW HOT <br />EVERYTHING</h1>
+              <span style={{ color: "#d23315" }}>REEBOK SPECIAL</span>
+              <h1>IMPOSSIBLE IS<br />NOTHING</h1>
               <p>CHECK OUT SUMMER <br /> COLLECTION FIRST COME TO GET <br /> THE BEST!</p>
               <div>
                 <Link to='./blog'>
-                  <button className='readMore'>READ MORE</button>
+                  <button className='readMore' style={{ backgroundColor: "#d23315" }}>READ MORE</button>
                 </Link>
                 <Link to='./shop'>
                   <button className='showMore'>SHOP NOW</button>
@@ -78,7 +73,7 @@ const HomeSlider = () => {
         </SwiperSlide>
         <SwiperSlide>
           <div className='banner'>
-            <img className='bannerImg' src="https://res.cloudinary.com/inovatormatin/image/upload/v1681566322/eway/homeSlide/sllider_5_ryxrfg.png" alt="banner5" />
+            <img className='bannerImg' src="https://res.cloudinary.com/inovatormatin/image/upload/v1681920543/eway/homeSlide/banner3_4x_yn3eoh.png" alt="banner4" />
           </div>
         </SwiperSlide>
       </Swiper>

@@ -102,4 +102,7 @@
   .css-1rrgvs4-MuiInputBase-root .MuiInputBase-input {
     padding: 4px 4px 4px 32px !important;
   }
+  .navbarOptions li > a {
+    margin-right: 1rem;
+  }
 }

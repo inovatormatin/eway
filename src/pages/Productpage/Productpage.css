@@ -6,3 +6,24 @@
 .sec1{
     display: flex;
 }
+
+/* second break point */
+@media only screen and (max-width: 1270px) {
+    .productPage{
+        width: 90%;
+    }
+}
+
+/* third break point */
+@media only screen and (max-width: 1160px) {
+    .productPage{
+        width: 99%;
+    }
+}
+
+/* fourth break point */
+@media only screen and (max-width: 970px) {
+    .productPage{
+        padding: 20px 0px;
+    }
+}
