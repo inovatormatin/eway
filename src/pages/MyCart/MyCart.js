@@ -123,7 +123,7 @@ const MyCart = () => {
                       <MdDeleteOutline />
                     </span>
                     <img src={item.primaryImg} alt={item.name} />
-                    <div className="">
+                    <div className="cartItemMiddleArea">
                       <div className="cartItemAbout">
                         <h4>{item.name}</h4>
                         <p>Product Id _{item.id.slice(0, 7)}</p>

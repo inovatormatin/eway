@@ -10,7 +10,7 @@
     justify-content: space-between;
 }
 
-.placeOrderPageInfo>.userInfo>.card {
+.placeOrderPageInfo>.userInfo>div>.card {
     background-color: #e7e7e7;
     /* background-color: #eacaffae; */
     border-radius: 10px;
@@ -19,12 +19,13 @@
     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
 
-.placeOrderPageInfo>.userInfo>.card h4 {
+.placeOrderPageInfo>.userInfo>div>.card h4 {
     margin: .5rem 0;
     color: #61ce70;
 }
 
-.placeOrderPageInfo>.userInfo>.card h4 button, .userItems button {
+.placeOrderPageInfo>.userInfo>div>.card h4 button,
+.userItems button {
     float: right;
     color: white;
     background-color: #61ce70;
@@ -35,7 +36,8 @@
     align-items: center;
 }
 
-.placeOrderPageInfo>.userInfo>.card h4 button svg, .userItems button svg {
+.placeOrderPageInfo>.userInfo>div>.card h4 button svg,
+.userItems button svg {
     margin-left: 5px;
 }
 
@@ -112,4 +114,56 @@
 
 .orderProduct p span {
     float: right;
+}
+
+/* first break point */
+@media only screen and (max-width: 1270px) {
+    .placeOrderPage {
+        max-width: 850px;
+        margin: auto;
+    }
+
+    .placeOrderPageInfo {
+        flex-direction: column;
+    }
+
+    .orderProductContainer {
+        grid-gap: 20px;
+    }
+
+    .userInfoContainer {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 20px;
+    }
+
+    .placeOrderPageInfo>.userInfo {
+        width: 100%;
+    }
+
+    .placeOrderPageInfo>.userInfo>div>.card {
+        margin-bottom: 0;
+    }
+}
+
+/* Seond break point */
+@media only screen and (max-width: 920px) {
+    .orderProductContainer {
+        grid-gap: 10px;
+    }
+    .placeOrderPage{
+        max-width: 730px;
+    }
+    .orderProduct{
+        max-width: 165px;
+    }
+    .orderProduct img{
+        width: 162px;
+    }
+    .orderProduct h4{
+        font-size: 15px;
+    }
+    .orderProduct p{
+        font-size: .8rem;
+    }
 }

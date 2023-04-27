@@ -12,7 +12,7 @@ import { FaRegAddressCard } from "react-icons/fa";
 import { getUserInfo } from "../../actions/userActions";
 import { getCartbyUser } from "../../actions/cartAction";
 import { useDispatch, useSelector } from "react-redux";
-import { useNavigate } from 'react-router-dom'
+import { useNavigate } from "react-router-dom";
 import { RingLoader } from "../../components";
 import { Button } from "@mui/material";
 import Cookies from "universal-cookie";
@@ -49,7 +49,7 @@ const PlaceOrder = () => {
           userEmail: userState.userInfo.email,
           phone: {
             phoneNumber: userState.userInfo.phoneNumber,
-            secondaryPhoneNumber: userState.userInfo.secondaryPhoneNumber
+            secondaryPhoneNumber: userState.userInfo.secondaryPhoneNumber,
           },
           address: {
             city: userState.userInfo.city,
@@ -57,16 +57,16 @@ const PlaceOrder = () => {
             landmark: userState.userInfo.landmark,
             house_flat_no: userState.userInfo.house_flat_no,
             pincode: userState.userInfo.pincode,
-            address: userState.userInfo.address
-          }
+            address: userState.userInfo.address,
+          },
         },
-        userId: id
+        userId: id,
       };
       dispatch(placeUserOrders(data, navigate));
-    } else { 
-      toast.error("You Don't have any item in your cart")
+    } else {
+      toast.error("You Don't have any item in your cart");
     }
-  }
+  };
 
   useEffect(() => {
     if (userState.userInfo.name === undefined) {
@@ -82,8 +82,8 @@ const PlaceOrder = () => {
   }, []); // eslint-disable-line
 
   useEffect(() => {
-    window.scrollTo(0, 0)
-  }) // eslint-disable-line
+    window.scrollTo(0, 0);
+  }); // eslint-disable-line
 
   return (
     <>
@@ -121,81 +121,84 @@ const PlaceOrder = () => {
             </div>
             {/* user info */}
             <div className="userInfo">
-              {/* personal info */}
               <h1>Your details</h1>
-              <div className="card">
-                <h4>Name and phone</h4>
-                <span className="cardInfo">
-                  <TiUser />
-                  <p>{userState.userInfo.name}</p>
-                </span>
-                <span className="cardInfo">
-                  <HiOutlineMail />
-                  <p>{userState.userInfo.email}</p>
-                </span>
-                <span className="cardInfo">
-                  <BiPhone />
-                  <p>
-                    <> {userState.userInfo.phoneNumber}</>
-                    {userState.userInfo.secondaryPhoneNumber !== null ? (
-                      <>, {userState.userInfo.secondaryPhoneNumber}</>
-                    ) : (
-                      ""
-                    )}
-                  </p>
-                </span>
-              </div>
-              {/* address info */}
-              <div className="card">
-                <h4>
-                  Shipping Address{" "}
-                  <Link to={"/myprofile"}>
-                    <button>
-                      EDIT <BiMessageSquareEdit />
-                    </button>
-                  </Link>
-                </h4>
-                <span className="cardInfo">
-                  <FaRegAddressCard />
-                  <p>
-                    {userState.userInfo.city}, {userState.userInfo.state} <br />
-                    {userState.userInfo.landmark},{" "}
-                    {userState.userInfo.house_flat_no} <br />
-                    {userState.userInfo.address}
-                  </p>
-                </span>
-                <span className="cardInfo">
-                  <BiMapPin />
-                  <p>{userState.userInfo.pincode}</p>
-                </span>
-              </div>
-              {/* Payment method */}
-              <div className="card">
-                <h4>Amount to pay</h4>
-                <span className="cardInfo">
-                  <HiOutlineCash />
-                  <p>
-                    Payment Method : <span> Cash on deleivery</span>
-                  </p>
-                </span>
-                <span className="cardInfo">
-                  <HiCash />
-                  <p>
-                    Sub total :<span>$ {totalAmount}</span>
-                  </p>
-                </span>
-                <span className="cardInfo">
-                  <HiOutlineReceiptTax />
-                  <p>
-                    Taxes : <span>Free</span>
-                  </p>
-                </span>
-                <span className="cardInfo">
-                  <p>
-                    <span></span>
-                    <strong> Total Price : $ {totalAmount}</strong>
-                  </p>
-                </span>
+              <div className="userInfoContainer">
+                {/* personal info */}
+                <div className="card">
+                  <h4>Name and phone</h4>
+                  <span className="cardInfo">
+                    <TiUser />
+                    <p>{userState.userInfo.name}</p>
+                  </span>
+                  <span className="cardInfo">
+                    <HiOutlineMail />
+                    <p>{userState.userInfo.email}</p>
+                  </span>
+                  <span className="cardInfo">
+                    <BiPhone />
+                    <p>
+                      <> {userState.userInfo.phoneNumber}</>
+                      {userState.userInfo.secondaryPhoneNumber !== null ? (
+                        <>, {userState.userInfo.secondaryPhoneNumber}</>
+                      ) : (
+                        ""
+                      )}
+                    </p>
+                  </span>
+                </div>
+                {/* address info */}
+                <div className="card">
+                  <h4>
+                    Shipping Address{" "}
+                    <Link to={"/myprofile"}>
+                      <button>
+                        EDIT <BiMessageSquareEdit />
+                      </button>
+                    </Link>
+                  </h4>
+                  <span className="cardInfo">
+                    <FaRegAddressCard />
+                    <p>
+                      {userState.userInfo.city}, {userState.userInfo.state}{" "}
+                      <br />
+                      {userState.userInfo.landmark},{" "}
+                      {userState.userInfo.house_flat_no} <br />
+                      {userState.userInfo.address}
+                    </p>
+                  </span>
+                  <span className="cardInfo">
+                    <BiMapPin />
+                    <p>{userState.userInfo.pincode}</p>
+                  </span>
+                </div>
+                {/* Payment method */}
+                <div className="card">
+                  <h4>Amount to pay</h4>
+                  <span className="cardInfo">
+                    <HiOutlineCash />
+                    <p>
+                      Payment Method : <span> Cash on deleivery</span>
+                    </p>
+                  </span>
+                  <span className="cardInfo">
+                    <HiCash />
+                    <p>
+                      Sub total :<span>$ {totalAmount}</span>
+                    </p>
+                  </span>
+                  <span className="cardInfo">
+                    <HiOutlineReceiptTax />
+                    <p>
+                      Taxes : <span>Free</span>
+                    </p>
+                  </span>
+                  <span className="cardInfo">
+                    <p>
+                      <span></span>
+                      <strong> Total Price : $ {totalAmount}</strong>
+                    </p>
+                  </span>
+                </div>
               </div>
             </div>
           </div>
