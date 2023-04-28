@@ -60,3 +60,17 @@
   -webkit-appearance: none;
   margin: 0;
 }
+
+/* first break point */
+@media only screen and (max-width: 1060px) {
+  .profileSetting{
+    max-width: 840px;
+  }
+}
+
+/* second break point */
+@media only screen and (max-width: 890px) {
+  .profileSetting{
+    max-width: 680px;
+  }
+}

@@ -1,5 +1,8 @@
-.searchpage .results {
+.searchpage {
   max-width: 1240px;
+  margin: auto;
+}
+.searchpage .results {
   min-height: 140px;
   margin: 10px auto;
   text-align: center;
@@ -11,9 +14,8 @@
   border-radius: 5px;
 }
 .searchpage h1 {
-  max-width: 1240px;
   margin: 0 auto;
-  padding: 5px 30px 0 30px;
+  padding: 0 20px;
 }
 .searchpage hr {
   width: 50px;
@@ -24,13 +26,12 @@
   border: none;
 }
 .blogsSectionsearchpage > div {
-  max-width: 1220px;
-  margin: 20px auto;
+  margin: 20px;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
+  flex-wrap: wrap;
 }
 .blogRes > div{
-  max-width: 1220px;
   margin: 20px auto;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
@@ -38,4 +39,28 @@
 }
 .productRes, .blogRes{
   margin-top: 15px;
+}
+.blogsSectionsearchpage > div > .css-wuxkef-MuiPaper-root-MuiCard-root{
+  margin-bottom: 20px;
+}
+
+/* first break point */
+@media only screen and (max-width: 1220px) {
+  .blogsSectionsearchpage > div > .css-wuxkef-MuiPaper-root-MuiCard-root{
+    max-width: 340px;
+  }
+}
+
+/* second break point */
+@media only screen and (max-width: 1077px) {
+  .blogsSectionsearchpage > div > .css-wuxkef-MuiPaper-root-MuiCard-root{
+    max-width: 300px;
+  }
+}
+
+/* third break point */
+@media only screen and (max-width: 963px) {
+  .blogsSectionsearchpage > div > .css-wuxkef-MuiPaper-root-MuiCard-root{
+    max-width: 350px;
+  }
 }

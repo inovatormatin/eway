@@ -53,7 +53,7 @@ const SearchPage = () => {
                         </div>
                         : ""}
                     {searchState.results.blogResult.length !== 0
-                        ? <div className='blogRes'>
+                        ? <div className='blogsSectionsearchpage'>
                             <h1>Blog related '{keyword}'
                                 <hr />
                             </h1>
