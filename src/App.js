@@ -14,7 +14,7 @@ import {
   About,
   Contact,
 } from "./pages";
-import { Navbar, Footer, Toast, UnderDev } from "./components";
+import { Navbar, Footer, Toast, UnderDev, BottomNavigationbar } from "./components";
 import { useDispatch } from "react-redux";
 import { getallProducts } from "./actions/productActions";
 import Cookies from 'universal-cookie'
@@ -55,6 +55,7 @@ const App = () => {
     <>
       <div className="displayBody">
         <Navbar />
+        <BottomNavigationbar />
         <Toast />
         <Routes>
           <Route path="/" element={<Home />} />
