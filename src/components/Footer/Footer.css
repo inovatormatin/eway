@@ -63,3 +63,26 @@
     font-size: 0.8rem;
   }
 }
+
+/* Second break point */
+@media only screen and (max-width: 500px) {
+  .subscribeLetter input{
+    width: 12rem;
+  }
+  .subscribeLetter input, .subscribeLetter button{
+    padding: .5rem;
+  }
+  .footerFoot{
+    display: none;
+  }
+  .footerHead{
+    padding-top: 1rem;
+    margin-bottom: 1rem;
+  }
+  .footerHead h1{
+    font-size: 1.3rem;
+  }
+  .footerHead p{
+    font-size: .8rem;
+  }
+}

@@ -38,3 +38,13 @@
     font-size: .8rem;
     font-weight: 600;
 }
+
+/* First break point */
+@media only screen and (max-width: 500px) {
+    .productImage{
+        border-radius: 10px;
+    }
+    .productDetail h5{
+        font-size: .8rem;
+    }
+}

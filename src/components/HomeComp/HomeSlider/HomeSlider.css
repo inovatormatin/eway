@@ -32,6 +32,7 @@
 .showMore {
   background-color: transparent;
   border: solid black 1px;
+  border-style: inset;
 }
 .offer div button {
   font-size: 0.8rem;
@@ -81,5 +82,84 @@
   .offer div button {
     font-size: 0.6rem;
     padding: 0.4rem 1rem;
+  }
+}
+
+/* third break point */
+@media only screen and (max-width: 700px) {
+  .swiper-button-next:after,
+  .swiper-rtl .swiper-button-prev:after,
+  .swiper-button-prev:after,
+  .swiper-rtl .swiper-button-next:after {
+    font-size: 20px !important;
+  }
+  .swiper-button-next,
+  .swiper-button-prev {
+    width: calc(var(--swiper-navigation-size) / 44 * 2) !important;
+  }
+  .swiper-button-next {
+    right: 15px !important;
+  }
+  .swiper-button-prev {
+    left: 15px !important;
+  }
+}
+
+/* third break point */
+@media only screen and (max-width: 650px) {
+  .offer h1 {
+    font-size: 1.2rem;
+  }
+  .offer span {
+    font-size: 0.6rem;
+  }
+  .offer p {
+    font-size: 0.5rem;
+    margin-bottom: 0.6rem;
+  }
+  .offer h1{
+    margin: 3px 0;
+  }
+  .offer div button {
+    font-size: 0.5rem;
+    padding: 0.4rem 0.6rem;
+  }
+  .leftSideOffer {
+    left: 15%;
+  }
+  .rightSideOffer {
+    right: 15%;
+  }
+}
+
+/* fourth break point */
+@media only screen and (max-width: 500px) {
+  .leftSideOffer {
+    left: 10%;
+  }
+  .rightSideOffer {
+    right: 10%;
+  }
+  .offer {
+    top: 13%;
+  }
+}
+
+/* fifth break point */
+@media only screen and (max-width: 400px) {
+  .offer span {
+    font-size: 0.4rem;
+  }
+  .offer h1 {
+    font-size: 0.8rem;
+  }
+  .offer p {
+    font-size: 0.4rem;
+    margin-top: .2rem;
+    margin-bottom: .2rem;
+  }
+  .offer div button {
+    font-size: 0.4rem;
+    padding: 0.3rem 0.4rem;
   }
 }

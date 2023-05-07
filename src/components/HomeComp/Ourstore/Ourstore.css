@@ -34,3 +34,34 @@
     max-width: 90%;
   }
 }
+
+/* second break point */
+@media only screen and (max-width: 767px) {
+  .storegallery {
+    grid-template-columns: 1fr 1fr;
+    max-width: 420px;
+    grid-gap: 40px;
+  }
+}
+
+/* third break point */
+@media only screen and (max-width: 767px) {
+  .storeHeading h3 {
+    font-size: 1.5rem;
+  }
+  .storeHeading p {
+    font-size: 0.8rem;
+  }
+}
+/* fourth break point */
+@media only screen and (max-width: 435px) {
+  .ourStore{
+    margin: 1.3rem 0 .8rem 0;
+  }
+  .storeHeading {
+    padding: 0;
+  }
+  .storegallery {
+    grid-gap: 15px;
+  }
+}

@@ -2,7 +2,19 @@
     position: fixed;
     z-index: 2;
     bottom: 0;
-    width: 100%;
+    width: -webkit-fill-available;
+}
+.bottomNavigationBarBox svg{
+    font-size: 1.2rem;
+}
+.bottomNavigationBarBox span{
+    font-weight: 600;
+    margin-top: 3px;
+    font-size: .7rem !important;
+}
+.css-1bjk3jo-MuiButtonBase-root-MuiBottomNavigationAction-root.Mui-selected{
+    font-size: .8rem !important;
+    color: var(--lightGreen) !important;
 }
 
 /* first break point */

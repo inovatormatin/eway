@@ -60,3 +60,30 @@
     font-size: 0.8rem;
   }
 }
+
+/* Second break point */
+@media only screen and (max-width: 766px) {
+  .bannerSection {
+    flex-direction: column;
+    gap: 10px;
+  }
+   .bsc {
+    margin: auto;
+    width: 96%;
+  }
+}
+
+/* Third break point */
+@media only screen and (max-width: 435px) {
+  .bannerOptions {
+    left: 3%;
+    bottom: 3%;
+  }
+  .bannerOptions h4 {
+    font-size: 1rem;
+  }
+  .bannerOptions button {
+    background-color: #bcf6c4;
+    padding: 0.3rem .5rem;
+  }
+}
