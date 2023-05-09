@@ -44,3 +44,41 @@
     font-size: 0.7rem;
   }
 }
+
+/* Second break point */
+@media only screen and (max-width: 932px) {
+  .itemgallery{
+    grid-template-columns: 1fr 1fr 1fr;
+    max-width: 720px;
+  }
+}
+
+/* Third break point */
+@media only screen and (max-width: 530px) {
+  .itemgallery{
+    grid-gap: 10px;
+  }
+  .leftNav span{
+    padding-right: 0;
+    font-size: 0.8rem;
+  }
+  .shopItemNav button, .loadmore button{
+    font-size: .5rem;
+    padding: .2rem .5rem;
+  }
+}
+
+/* Fourth break point */
+@media only screen and (max-width: 470px) {
+  .itemgallery{
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 15px;
+  }
+}
+
+/* Fifth break point */
+@media only screen and (max-width: 375px) {
+  .leftNav span{
+    font-size: 0.7rem;
+  }
+}

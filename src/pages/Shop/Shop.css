@@ -14,3 +14,17 @@
     margin: .8rem;
     font-weight: 500;
 }
+
+/* first break point */
+@media only screen and (max-width: 932px) {
+    .shopTitle{
+        height: 130px;
+    }
+    .shopTitle h2{
+        font-size: 2rem;
+        margin: .5rem;
+    }
+    .shopTitle p{
+        margin: .5rem;
+    }
+}
