@@ -1,5 +1,5 @@
 .loginBox {
-  position: fixed;
+  position: absolute;
   top: 0;
   width: -webkit-fill-available;
   height: 100vh;
@@ -73,4 +73,36 @@
   font-weight: 500;
   font-size: 0.8rem;
   color: red;
+}
+
+/* first break point */
+@media only screen and (max-width: 630px) {
+  .form {
+    width: 100%;
+  }
+  .form form input {
+    padding-bottom: .4rem;
+  }
+  .form button {
+    margin: .3rem 0;
+  }
+  .form h4 {
+    margin-bottom: 1rem;
+  }
+  .form section {
+    display: block;
+  }
+  .loginBox{
+    padding: 1rem 2rem;
+  }
+  .loginwala h4{
+    margin-top: 2rem;
+    margin-bottom: 3rem;
+  }
+  .loginwala{
+    margin-bottom: 2rem;
+  }
+  .loginBox button{
+    border-radius: 10px;
+  }
 }

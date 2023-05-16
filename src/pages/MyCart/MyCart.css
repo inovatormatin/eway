@@ -145,3 +145,91 @@
     display: block;
   }
 }
+
+/* fourth break point */
+@media only screen and (max-width: 600px) {
+  .mycart nav h1{
+    font-size: 1rem;
+  }
+  .mycart nav div strong{
+    font-size: .8rem;
+  }
+  .mycart nav button{
+    padding: .3rem .7rem;
+  }
+  .cartItem img{
+    width: 100px;
+  }
+  .cartItemAbout h4{
+    font-size: 1rem;
+  }
+  .cartItemAbout p{
+    font-size: .6rem;
+  }
+  .cartItemAmount, .cartItemAbout{
+    margin: 0 1rem;
+  }
+  .cartItemAmount input, .cartItemAmount button{
+    padding: .2rem 0;
+  }
+  .cartItem h2{
+    margin: 0;
+    margin-left: auto;
+    font-size: .9rem;
+  }
+}
+
+/* fifth break point */
+@media only screen and (max-width: 400px) {
+  .mycart nav h1{
+    font-size: .9rem;
+  }
+  .mycart nav div strong{
+    font-size: .7rem;
+  }
+  .cartItem{
+    padding: .3rem;
+  }
+  .cartItem img{
+    width: 80px;
+  }
+  .removeButton{
+    padding: 1px 3px 1px 3px;
+  }
+  .removeButton svg{
+    font-size: .8rem;
+  }
+  .cartItemAmount, .cartItemAbout{
+    margin: 0 .8rem;
+  }
+  .cartItemAmount button{
+    width: 20px;
+  }
+  .cartItemAmount button, .cartItemAmount input{
+    font-size: .8rem;
+  }
+  .cartItem h2{
+    font-size: .7rem;
+    width: 90px;
+  }
+  .cartItem h2 span{
+    font-size: .5rem;
+  }
+  .cartItemAbout h4{
+    font-size: .8rem;
+  }
+  .cartItemAbout p{
+    font-size: .5rem;
+  }
+  .mycart nav div strong{
+    font-size: .6rem;
+  }
+  .mycart nav button{
+    padding: .2rem .5rem;
+    font-size: .6rem;
+    margin: 0;
+  }
+  .mycart nav h1{
+    font-size: .8rem;
+  }
+}

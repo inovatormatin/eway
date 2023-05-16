@@ -106,10 +106,15 @@ input, textarea{
 }
 
 @media only screen and (max-width: 767px) {
-  /* .displayBody{
-    display: none;
+  .Toastify__toast{
+    width: 95% !important;
+    margin: auto !important;
+    margin-bottom: 62px !important;
   }
-  .hideBody{
-    display: block;
-  } */
+  .Toastify__toast-body{
+    font-size: .8rem;
+  }
+  .Toastify__toast-container{
+    width: 20%;
+  }
 }

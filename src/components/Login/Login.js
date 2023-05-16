@@ -73,7 +73,7 @@ const Login = ({ update }) => {
             </header>
             {form ? (
                 <div className="form">
-                    <form onSubmit={loginHandler}>
+                    <form onSubmit={loginHandler} className="loginwala">
                         <h4>Login Form</h4>
                         <input
                             type="email"
