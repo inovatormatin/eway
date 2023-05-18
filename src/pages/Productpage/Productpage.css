@@ -27,3 +27,18 @@
         padding: 20px 0px;
     }
 }
+
+/* fourth break point */
+@media only screen and (max-width: 768px) {
+    .sec1{
+        flex-direction: column;
+    }
+}
+
+/* fifth break point */
+@media only screen and (max-width: 425px) {
+    .productPageDetail{
+        width: auto;
+        padding: 5px 12px;
+    }
+}

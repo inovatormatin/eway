@@ -86,7 +86,31 @@
     height: 250px;
     margin-bottom: 1.5rem;
   }
-  .contactContain form input, .contactContain form textarea {
+  .contactContain form input,
+  .contactContain form textarea {
     font-size: 1rem;
+  }
+}
+
+/* third break point */
+@media only screen and (max-width: 932px) {
+  .contactTitle {
+    height: 130px;
+  }
+  .contactTitle h2 {
+    font-size: 2rem;
+    margin: 0.5rem;
+  }
+}
+
+/* fourth break point */
+@media only screen and (max-width: 425px) {
+  .contactContain form button {
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    border-radius: 10px;
+  }
+  .contactContain{
+    margin: 1rem auto 1rem auto;
   }
 }

@@ -70,7 +70,51 @@
   .setQuantityAndPrice {
     flex-direction: column;
   }
-  .productPagePrice{
+  .productPagePrice {
     margin-top: 15px !important;
+  }
+}
+
+/* Second break point */
+@media only screen and (max-width: 768px) {
+  .productPageDetail {
+    width: 90%;
+    margin: auto;
+  }
+  .setQuantityAndPrice {
+    flex-direction: row;
+  }
+}
+
+/* Third break point */
+@media only screen and (max-width: 550px) {
+  .setQuantityAndPrice {
+    flex-direction: column;
+    margin: 3rem auto 2rem auto;
+  }
+  .productPageDetail {
+    width: 86%;
+  }
+}
+
+/* fourth break point */
+@media only screen and (max-width: 425px) {
+  .productPageDetail h1 {
+    font-size: 1.5rem;
+    margin: 0.5rem auto;
+  }
+  .productPageDetail p {
+    font-size: 1rem;
+  }
+  .setQuantity input,
+  .setQuantity button {
+    padding: 0.4rem 0rem;
+  }
+  .setQuantity .cartButton {
+    font-size: 0.9rem;
+    padding: 0.4rem 0.8rem;
+  }
+  .setQuantityAndPrice{
+    margin: 2rem auto 1rem auto;
   }
 }

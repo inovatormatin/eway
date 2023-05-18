@@ -109,7 +109,6 @@ input, textarea{
   .Toastify__toast{
     width: 95% !important;
     margin: auto !important;
-    margin-bottom: 62px !important;
   }
   .Toastify__toast-body{
     font-size: .8rem;
