@@ -93,6 +93,9 @@
   font-weight: 400;
   color: white;
 }
+.dropperItemsMenuHelp{
+  display: none !important;
+}
 
 /* first break point */
 @media only screen and (max-width: 931px) {
@@ -149,5 +152,8 @@
 
   .extraOption li button {
     box-shadow: none;
+  }
+  .dropperItemsMenu, .dropperItemsMenuHelp{
+    display: flex !important;
   }
 }

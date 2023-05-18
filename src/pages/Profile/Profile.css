@@ -74,3 +74,28 @@
     max-width: 680px;
   }
 }
+
+/* third break point */
+@media only screen and (max-width: 700px) {
+  .profileSetting{
+    max-width: 95%;
+  }
+  .profileSetting-form section{
+    flex-direction: column;
+    gap: 0;
+  }
+  .profileSetting-form{
+    padding: 1rem;
+  }
+}
+
+/* fourth break point */
+@media only screen and (max-width: 426px) {
+  .profileSetting-form p{
+    margin-top: 0;
+    margin-bottom: 5px;
+  }
+  .profileSetting h2{
+    font-size: 1.5rem;
+  }
+}

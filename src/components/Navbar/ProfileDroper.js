@@ -8,6 +8,7 @@ import MenuItem from '@mui/material/MenuItem';
 import MenuList from '@mui/material/MenuList';
 import Stack from '@mui/material/Stack';
 import { AiOutlineUser } from "react-icons/ai";
+import { BiSupport } from "react-icons/bi";
 import { FiShoppingBag, FiSettings } from "react-icons/fi";
 import { IoMdLogOut } from "react-icons/io";
 import { Divider } from '@mui/material';
@@ -115,21 +116,32 @@ const ProfileDroper = () => {
                                     >
                                         <Divider />
                                         <MenuItem
+                                            className='dropperItemsMenu'
                                             onClick={(e) => {
                                                 handleClose(e)
                                                 navigate('/myprofile')
                                             }}
-                                            >
+                                        >
                                             <FiSettings />
                                             Setting
                                         </MenuItem>
                                         <MenuItem
+                                            className='dropperItemsMenu'
                                             onClick={(e) => {
                                                 handleClose(e)
                                                 navigate('/myorders')
                                             }}>
                                             <FiShoppingBag />
                                             My Orders
+                                        </MenuItem>
+                                        <MenuItem
+                                            className='dropperItemsMenuHelp'
+                                            onClick={(e) => {
+                                                handleClose(e)
+                                                navigate('/contact')
+                                            }}>
+                                            <BiSupport />
+                                            Contact Us
                                         </MenuItem>
                                         <MenuItem
                                             sx={{ color: "red !important" }}
