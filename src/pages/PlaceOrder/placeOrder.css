@@ -167,3 +167,43 @@
         font-size: .8rem;
     }
 }
+
+/* Third break point */
+@media only screen and (max-width: 768px) {
+    .userInfoContainer{
+        grid-template-columns: auto;
+        grid-gap: 10px;
+        margin-bottom: 10px;
+    }
+    .orderProductContainer{
+        grid-template-columns: auto auto auto;
+        place-items: center;
+    }
+    .placeOrderPage{
+        max-width: 96%;
+        margin: 0 auto;
+    }
+    .placeOrderPage{
+        padding: 5px;
+    }
+}
+
+/* Third break point */
+@media only screen and (max-width: 560px) {
+    .orderProductContainer{
+        grid-template-columns: auto auto;
+    }
+    .confirmOrder{
+        text-align: center;
+    }
+    .orderProduct img{
+        border-radius: 10px;
+    }
+}
+
+/* Fourth break point */
+@media only screen and (max-width: 375px) {
+    .orderProduct img{
+        width: 140px;
+    }
+}

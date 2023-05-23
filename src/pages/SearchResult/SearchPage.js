@@ -37,7 +37,7 @@ const SearchPage = () => {
                 <>
                     {searchState.results.blogResult.length === 0 && searchState.results.productResult.length === 0 ?
                         <div className='results'>
-                            <h3>No result found related to '{keyword}'</h3>
+                            <h3>No result found related to '{keyword.replace("%20", " ")}'</h3>
                         </div>
                         : ""}
                     {searchState.results.productResult.length !== 0

@@ -66,6 +66,7 @@ const ProductTable = ({ data, index }) => {
           })}
         </tbody>
       </table>
+      <div className="myorderTableMobile">
       {data.items.map((data, index) => {
         return (
           <div key={index} className="productCardinMyOreders">
@@ -73,16 +74,17 @@ const ProductTable = ({ data, index }) => {
             <div className="productCardinMyOredersDetials">
               <h3>{data.name}</h3>
               <p>
-                <span>x{data.quanitity} / </span>
-                <span>$ {data.productPrice}</span>
+                <span>Quantity : x{data.quanitity} | </span>
+                <span>$ {data.productPrice} per unit</span>
               </p>
               <p>
-                <strong>Total : {data.quanitity * data.productPrice}</strong>
+                <strong>Total : $ {data.quanitity * data.productPrice}</strong>
               </p>
             </div>
           </div>
         );
       })}
+      </div>
       <h4>
         <span>
           <button onClick={() => handleClickOpen()}>See Details</button>
