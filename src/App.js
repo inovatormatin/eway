@@ -70,6 +70,8 @@ const App = () => {
           <Route path="/about" element={<About />} />
           <Route path="/search/:keyword" element={<SearchPage />} />
           <Route path="/contact" element={<Contact />} />
+          // for visiter coming from extrapaisa.com
+          <Route exact path="/aff_c/:id" element={<Home />} />
         </Routes>
         <Footer />
       </div>
